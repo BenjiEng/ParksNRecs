@@ -12,5 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require underscore
+//= require backbone
+//= require bootstrap
+//= require jquery.serializejson.min
+//= require parks_n_recs
+//= require_tree ../templates
+//= require_tree ./models
+//= require_tree ./collections
+//= require_tree ./utils
+//= require_tree ./views
+//= require_tree ./routers
 //= require_tree .
