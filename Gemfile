@@ -33,6 +33,7 @@ group :development do
   gem 'quiet_assets'
 end
 
+#BOOBLY WOOBLY
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
