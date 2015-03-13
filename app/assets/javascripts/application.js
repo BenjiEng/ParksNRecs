@@ -13,8 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require underscore
-//= require backbone
 //= require bootstrap
+//= require backbone
 //= require jquery.serializejson.min
 //= require parks_n_recs
 //= require_tree ../templates

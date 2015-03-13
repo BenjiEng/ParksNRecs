@@ -5,9 +5,13 @@ window.ParksNRecs = {
   Routers: {},
   initialize: function() {
     alert('Hello from Backbone!');
+    new ParksNRecs.Routers.Router({$rootEl: $('#main')});
+    var view = new ParksNRecs.Views.Navbar();
+    $('#navbar').html(view.render().$el);
+    Backbone.history.start();
   }
 };
 
 $(document).ready(function(){
-  ParksNRecs.initialize();
+
 });
