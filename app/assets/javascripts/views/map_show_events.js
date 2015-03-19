@@ -25,11 +25,12 @@ ParksNRecs.Views.EventMapShow = Backbone.View.extend({
 
   attachMapListeners: function () {
     google.maps.event.addListener(this._map, 'idle', this.search.bind(this));
-    google.maps.event.addListener(this._map, 'click', this.createListing.bind(this));
+    // google.maps.event.addListener(this._map, 'click', this.createListing.bind(this));
   },
 
   // Event handlers
   addMarker: function (park) {
+
     if (this._markers[park.id]) { return };
     var view = this;
 
@@ -51,20 +52,20 @@ ParksNRecs.Views.EventMapShow = Backbone.View.extend({
     this._markers[park.id] = marker;
   },
 
-  createListing: function (event) {
-    var lat = event.latLng.lat();
-    var lng = event.latLng.lng();
-    var park = new GoogleMapsDemo.Models.Listing({
-      lat: lat,
-      lng: lng
-    });
-
-    park.save({}, {
-      success: function () {
-        this.collection.add(park);
-      }.bind(this)
-    });
-  },
+  // createListing: function (event) {
+  //   var lat = event.latLng.lat();
+  //   var lng = event.latLng.lng();
+  //   var park = new GoogleMapsDemo.Models.Listing({
+  //     lat: lat,
+  //     lng: lng
+  //   });
+  //
+  //   park.save({}, {
+  //     success: function () {
+  //       this.collection.add(park);
+  //     }.bind(this)
+  //   });
+  // },
 
   search: function () {
     // This method will re-fetch the map's collection, using the

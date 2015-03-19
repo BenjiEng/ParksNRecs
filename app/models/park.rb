@@ -23,7 +23,7 @@ class Park < ActiveRecord::Base
   validates :name, :address, :city, :state, :zip, presence: true
   validates :zip, length: { is: 5 }
 
-  # geocoded_by :full_address
+  geocoded_by :full_address
   after_validation :geocode
 
 

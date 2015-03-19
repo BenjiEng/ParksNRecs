@@ -2,7 +2,6 @@ ParksNRecs.Views.ParksIndex = Backbone.CompositeView.extend({
   template: JST["parks/index"],
 
   initialize: function () {
-    debugger
     this.listenTo(this.collection, 'sync', this.render);
     this.listenTo(this.collection, 'add', this.addIndexItem);
 
@@ -18,7 +17,6 @@ ParksNRecs.Views.ParksIndex = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    debugger
     var content = this.template({});
     this.$el.html(content)
     this.attachSubviews()
