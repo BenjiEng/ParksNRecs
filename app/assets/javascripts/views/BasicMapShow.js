@@ -13,7 +13,6 @@ ParksNRecs.Views.BasicMapShow = Backbone.View.extend({
   },
 
   addMarker: function (park) {
-    debugger
     if (this._markers[park.id]) { return };
     var view = this;
 

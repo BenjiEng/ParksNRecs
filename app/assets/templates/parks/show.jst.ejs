@@ -1,6 +1,13 @@
-<h1>Park Show</h1>
-<p><%=park.escape('name')%></p>
+<h1><%=park.escape('name')%></h1>
 
-<p><%=park.escape('address')%></p>
-
-<div class="map col-md-8"></div>
+<div class="row">
+<div class="map col-md-5"></div>
+<div class="col-md-1">
+  <p class="category">Address: </p>
+</div>
+<div class="col-md-6">
+  <span><%=park.escape('address')%></span>
+  <br>
+  <span><%=park.escape('city')%>, <%=park.escape('zip')%></span>
+</div>
+</div>
