@@ -11,7 +11,7 @@ class Api::ParksController < ApplicationController
 
   def show
     @park = Park.find(params[:id])
-    render json: @park
+    render :show
   end
 
   def index

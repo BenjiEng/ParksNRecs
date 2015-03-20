@@ -12,3 +12,7 @@ Park.create([{name: 'Dolores Park', address: '19th & Dolores St', city: 'San Fra
               state: 'CA', zip: "94117"},
               {name: 'South Sunset PLaygroud', address: '40th and Wawona', city: 'San Francisco',
               state: 'CA', zip: "94116"}])
+
+Review.create([{user_id: 1, park_id: 1, overall_score: 3, safety_score: 4, run_score: 3, seating_score: 1, kid_score: 2, view_score: 5,
+                drug_score: 5, comments: "This is a dank park. SO many HOES!"}, {user_id: 2, park_id: 1, overall_score: 3, safety_score: 4, run_score: 3, seating_score: 1, kid_score: 2, view_score: 5,
+                  drug_score: 5, comments: "This is not a dank park. Not enough HOES!"}])

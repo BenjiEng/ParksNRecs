@@ -26,6 +26,8 @@ class Park < ActiveRecord::Base
   geocoded_by :full_address
   after_validation :geocode
 
+  has_many :reviews
+
 
   def full_address
     [address, city, state, zip].join(', ')
