@@ -6,12 +6,10 @@ ParksNRecs.Routers.Router = Backbone.Router.extend({
 
 
   routes: {
-    '': 'searchShow',
-
+    '': 'root',
     'basic': 'basicMapShow',
     "markers": "markerMapShow",
     'events': 'eventsMapShow',
-
     'parks/:id': 'parkShow',
 
   },
@@ -37,9 +35,9 @@ ParksNRecs.Routers.Router = Backbone.Router.extend({
    this._swapView(view);
  },
 
- searchShow: function () {
+ root: function () {
   //  ParksNRecs.parks.fetch();
-  var view = new ParksNRecs.Views.SearchShow({
+  var view = new ParksNRecs.Views.Root({
     collection: ParksNRecs.parks
   });
   this._swapView(view);
@@ -53,13 +51,6 @@ parkShow: function(id) {
   });
   this._swapView(view)
 },
-
-  root: function () {
-    // ParksNRecs.parks.fetch()
-    var rootView = new ParksNRecs.Views.Root({collection: ParksNRecs.parks});
-    this._swapView(rootView);
-
-  },
 
   _swapView: function (view) {
     this.currentView && this.currentView.remove();
