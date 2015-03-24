@@ -8,7 +8,7 @@ ParksNRecs.Routers.Router = Backbone.Router.extend({
   routes: {
     '': 'root',
     'parks/:id': 'parkShow',
-    'review_search' 'reviewSearch',
+    'review_search': 'reviewSearch',
     'parks/:id/writereview': 'reviewForm'
 
 
