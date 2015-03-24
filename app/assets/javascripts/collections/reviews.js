@@ -1,5 +1,5 @@
-ParksNRecs.Collections.Parks = Backbone.Collection.extend({
+ParksNRecs.Collections.Reviews = Backbone.Collection.extend({
   url: "/api/reviews",
-  model: ParksNRecs.Models.Review,
+  model: ParksNRecs.Models.Review
 
-)};
+});

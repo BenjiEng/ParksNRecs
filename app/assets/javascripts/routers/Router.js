@@ -7,50 +7,45 @@ ParksNRecs.Routers.Router = Backbone.Router.extend({
 
   routes: {
     '': 'root',
-    'basic': 'basicMapShow',
-    "markers": "markerMapShow",
-    'events': 'eventsMapShow',
     'parks/:id': 'parkShow',
+    'review_search' 'reviewSearch',
+    'parks/:id/writereview': 'reviewForm'
+
 
   },
 
-  basicMapShow: function () {
-   var view = new ParksNRecs.Views.BasicMapShow();
-   this._swapView(view);
- },
+   root: function () {
+    //  ParksNRecs.parks.fetch();
+    var view = new ParksNRecs.Views.Root({
+      collection: ParksNRecs.parks
+    });
+    this._swapView(view);
+  },
 
- markerMapShow: function () {
-  //  ParksNRecs.parks.fetch();
-   var view = new ParksNRecs.Views.MarkerMapShow({
-     collection: ParksNRecs.parks
-   });
-   this._swapView(view);
- },
+  parkShow: function(id) {
 
- eventsMapShow: function () {
-  //  ParksNRecs.parks.fetch();
-   var view = new ParksNRecs.Views.EventMapShow({
-     collection: ParksNRecs.parks
-   });
-   this._swapView(view);
- },
+    var park = ParksNRecs.parks.getOrFetch(id);
+    var view = new ParksNRecs.Views.ParkShow({
+      model: park
+    });
+    this._swapView(view)
+  },
 
- root: function () {
-  //  ParksNRecs.parks.fetch();
-  var view = new ParksNRecs.Views.Root({
-    collection: ParksNRecs.parks
-  });
-  this._swapView(view);
-},
+  reviewSearch: function () {
+    var view = new ParksNRecs.Views.ReviewSearch({
+      collection: ParksNRecs.parks
+    });
+    this._swapView(view)
+  },
 
-parkShow: function(id) {
+  reviewForm: function (id) {
+    var park = ParksNRecs.parks.getOrFetch(id);
+    var view = new ParksNRecs.Views.ReviewForm({
+      model: park
+    });
+    this._swapView(view)
 
-  var park = ParksNRecs.parks.getOrFetch(id);
-  var view = new ParksNRecs.Views.ParkShow({
-    model: park
-  });
-  this._swapView(view)
-},
+  },
 
   _swapView: function (view) {
     this.currentView && this.currentView.remove();

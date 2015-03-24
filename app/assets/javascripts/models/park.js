@@ -1,6 +1,5 @@
 ParksNRecs.Models.Park = Backbone.Model.extend({
-  urlRoot: "api/parks"
-
+  urlRoot: "api/parks",
   reviews: function() {
     if (!this._reviews) {
       this._reviews = new ParksNRecs.Collections.Reviews();

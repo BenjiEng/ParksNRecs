@@ -12,13 +12,14 @@ ParksNRecs.Views.ParkShow = Backbone.CompositeView.extend({
   },
 
   addMap: function () {
+    debugger
     this.mapView = new ParksNRecs.Views.BasicMapShow({model: this.model, lat: this.model.get('latitude'),
     lng: this.model.get('longitude')
     });
   },
 
   addReviewView: function () {
-    
+
   },
 
 

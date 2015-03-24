@@ -1,5 +1,5 @@
 json.extract! @park, :name, :address, :city, :state, :zip, :weekday_hours,
-:saturday_hours, :sunday_hours, :parking, :restrooms, :telephone
+:saturday_hours, :sunday_hours, :parking, :restrooms, :telephone, :latitude, :longitude
 
 json.reviews @park.reviews do |review|
   json.extract! review, :overall_score, :safety_score, :seating_score, :run_score,
