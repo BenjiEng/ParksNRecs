@@ -1,4 +1,4 @@
-ParksNRecs.Views.SearchShow = Backbone.CompositeView.extend({
+ParksNRecs.Views.Root = Backbone.CompositeView.extend({
   // Initialization
   template: JST['root'],
 
