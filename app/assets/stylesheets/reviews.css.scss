@@ -1,3 +1,33 @@
 // Place all the styles related to the Reviews controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// Review Search
+// ----------------------------------------------------------------------
+
+.review-search{
+  background-color: rgba(175, 182, 175, 0.21)
+}
+
+.park-img{
+  margin-top: 20px
+}
+
+.review-search-btn{
+  color: white;
+  margin-bottom:4px;
+  border-color: #a50508;
+  background: #ea050b;
+  background-image: -webkit-linear-gradient(#14934B 2%, #11964A 10%, #33CA1B 100%);
+  background-image: linear-gradient(#14934B 2%, #11964A 10%, #33CA1B 100%);
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  text-shadow: 0 -1px 0 #760400;
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid;
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: center;
+}

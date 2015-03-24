@@ -15,7 +15,11 @@ class Api::ParksController < ApplicationController
   end
 
   def index
+    if params[:name]
+      @parks = Park.where('lower(parks.name) LIKE ?', "%#{params[:name].downcase}%")
+    else
     @parks = Park.all
+    end
     render json: @parks
   end
 
