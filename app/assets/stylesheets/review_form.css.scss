@@ -4,7 +4,7 @@
 }
 
 .rating {
-  unicode-bidi: bidi-override;
+  // unicode-bidi: bidi-override;
   direction: rtl;
   display: inline-block;
 }
@@ -13,8 +13,20 @@
   position: relative;
   width: 1.1em;
 }
-.rating > span:hover:before,
-.rating > span:hover ~ span:before {
-  content: "\2605";
-  position: absolute;
+.rating > i:hover,
+.rating > i:hover ~ i:before {
+  // content: "\2605";
+  // position: absolute;
+  cursor: pointer;
+  color: blue
 }
+
+.filled-star{
+  color: blue
+}
+
+
+// .rating > i:hover{
+//   cursor: pointer;
+//   color: blue;
+// }

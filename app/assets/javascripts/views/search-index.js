@@ -4,9 +4,9 @@ ParksNRecs.Views.SearchIndex = Backbone.CompositeView.extend({
   initialize: function () {
     this.listenTo(this.collection, 'sync', this.render);
 
-    this.mapView = new ParksNRecs.Views.EventMapShow({
-      collection: this.collection
-    });
+    // this.mapView = new ParksNRecs.Views.EventMapShow({
+    //   collection: this.collection
+    // });
   },
 
   renderItems: function () {
