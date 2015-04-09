@@ -3,7 +3,7 @@ ParksNRecs.Views.ReviewForm = Backbone.View.extend({
   events: {
     'click button': 'submit',
     'click i': 'setStars',
-    'onmouseover i': 'changeColors'
+    'mouseover i': 'changeColors'
   },
 
   initialize: function() {
@@ -12,7 +12,6 @@ ParksNRecs.Views.ReviewForm = Backbone.View.extend({
   },
 
   setStars: function (event) {
-    debugger
     $currentTarget = $(event.currentTarget)
     // had to reverse CSS because can't select preceding children
     var score = 5 - $currentTarget.index();
@@ -23,23 +22,23 @@ ParksNRecs.Views.ReviewForm = Backbone.View.extend({
       if(index <= score) {
         element.addClass()
       }
-    })
+    });
   },
 
   changeColors: function (event) {
-    debugger
     $currentTarget = $(event.currentTarget)
     var score = 5 - $currentTarget.index();
     var parent = $currentTarget.parent()
     var stars = parent.children()
     parent.attr('data-score', score)
     stars.each(function (index, element) {
+      debugger
 
       if(index <= score) {
         $(element).removeClass('fa-star-o')
         $(element).addClass('fa-star')
       }
-    })
+    });
 
   },
 
