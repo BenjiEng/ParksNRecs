@@ -1,45 +1,12 @@
 ParksNRecs.Views.ReviewForm = Backbone.View.extend({
   template: JST['reviews/form'],
   events: {
-    'click button': 'submit',
-    'click i': 'setStars',
-    'mouseover i': 'changeColors'
+    'click button': 'submit'
   },
 
   initialize: function() {
     this.collection = this.model.reviews;
     this.listenTo(this.model, 'sync', this.render)
-  },
-
-  setStars: function (event) {
-    $currentTarget = $(event.currentTarget)
-    // had to reverse CSS because can't select preceding children
-    var score = 5 - $currentTarget.index();
-    var parent = $currentTarget.parent()
-    var stars = parent.children()
-    parent.attr('data-score', score)
-    stars.each(function (index, element) {
-      if(index <= score) {
-        element.addClass()
-      }
-    });
-  },
-
-  changeColors: function (event) {
-    $currentTarget = $(event.currentTarget)
-    var score = 5 - $currentTarget.index();
-    var parent = $currentTarget.parent()
-    var stars = parent.children()
-    parent.attr('data-score', score)
-    stars.each(function (index, element) {
-      debugger
-
-      if(index <= score) {
-        $(element).removeClass('fa-star-o')
-        $(element).addClass('fa-star')
-      }
-    });
-
   },
 
   submit: function(event) {
