@@ -1,12 +1,18 @@
 ParksNRecs.Views.ReviewForm = Backbone.View.extend({
   template: JST['reviews/form'],
   events: {
-    'click button': 'submit'
+    'click button': 'submit',
+    'onmouseover span': 'spanner'
   },
 
   initialize: function() {
     this.collection = this.model.reviews;
     this.listenTo(this.model, 'sync', this.render)
+  },
+
+  spanner: function(event) {
+    event.preventDefault();
+    console.log("working");
   },
 
   submit: function(event) {
