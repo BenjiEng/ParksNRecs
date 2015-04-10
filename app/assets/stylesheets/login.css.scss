@@ -1,0 +1,23 @@
+body#login-background {
+  background: url('https://s3-us-west-1.amazonaws.com/parksnrecs/login.jpg') no-repeat 50% 50% fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+}
+
+.login-head {
+  padding-left: 15px;
+  padding-top: 50px;
+  font-weight: bold;
+  font-color: white;
+}
+
+.login-field {
+  padding-left: 15px;
+}
+
+.sub-button {
+  border-radius: 5px;
+  color: black;
+}
