@@ -1,4 +1,5 @@
 class Api::ReviewsController < ApplicationController
+  before_action  :ensure_logged_in
 
   def create
     @review = Review.new(review_params)
@@ -36,6 +37,13 @@ class Api::ReviewsController < ApplicationController
       params.require(:review).permit(:overall_score, :safety_score, :seating_score,
                                      :run_score, :kid_score, :view_score, :drug_score,
                                      :comments, :park_id)
+    end
+
+    def ensure_logged_in
+      if !current_user
+        redirect_to new_session_url
+      end
+
     end
 
 end
