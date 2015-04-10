@@ -1,3 +1,5 @@
+//CREATE SESSION
+
 body#login-background {
   background: url('https://s3-us-west-1.amazonaws.com/parksnrecs/login.jpg') no-repeat 50% 50% fixed;
   background-size: cover;
@@ -6,9 +8,21 @@ body#login-background {
   -webkit-background-size: cover;
 }
 
+//CREATE USERS
+
+body#new-user-background {
+  background: url('https://s3-us-west-1.amazonaws.com/parksnrecs/new-user.jpg') no-repeat 50% 50% fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+}
+
+//SHARED
+
 .login-head {
   padding-left: 15px;
-  padding-top: 50px;
+  padding-top: 25px;
   font-weight: bold;
   font-color: white;
 }
@@ -20,4 +34,8 @@ body#login-background {
 .sub-button {
   border-radius: 5px;
   color: black;
+}
+
+.to-new-user {
+  padding-left: 15px;
 }

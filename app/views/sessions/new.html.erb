@@ -1,5 +1,7 @@
 <body id="login-background">
+  <a href="/#"><span class="glyphicon glyphicon-home"></span></a>
   <h1 class="login-head">Please login</h1>
+  <br>
 
   <form id="new_user" action="<%= session_url %>" method="post">
     <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -12,4 +14,6 @@
 
     <input class="sub-button" type="submit" value="submit">
   </form>
+
+  <a href="/users/new" class="to-new-user">...or create a new account.</a>
 </div>

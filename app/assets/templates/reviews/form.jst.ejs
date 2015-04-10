@@ -1,6 +1,6 @@
 <h1><%= park.escape('name') %></h1>
 
-<form>
+<form class='review-form'>
 <div class='rating-cat' id="overall_score"> Overall Score:
   <div class="rating">
     <span class="empty-star">☆</span>
@@ -78,6 +78,8 @@
   </div>
 </div>
 
-  <button>Submit Review</button>
+<textarea type='text' name='review[comments]'></textarea>
+<br>
+<button>Submit Review</button>
 
 </form>
