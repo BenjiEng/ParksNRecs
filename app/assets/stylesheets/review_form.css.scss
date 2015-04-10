@@ -8,7 +8,7 @@
   direction: rtl;
   display: inline-block;
 }
-.rating > span {
+.empty-star {
   display: inline-block;
   position: relative;
   width: 1.1em;
@@ -17,4 +17,9 @@
 .rating > span:hover ~ span:before {
   content: "\2605";
   position: absolute;
+  cursor:pointer
+}
+
+.full-star {
+  content: "\2605";
 }

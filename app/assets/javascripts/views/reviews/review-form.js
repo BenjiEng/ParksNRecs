@@ -2,7 +2,7 @@ ParksNRecs.Views.ReviewForm = Backbone.View.extend({
   template: JST['reviews/form'],
   events: {
     'click button': 'submit',
-    'onmouseover span': 'spanner'
+    'click span': 'setStars'
   },
 
   initialize: function() {
@@ -10,9 +10,19 @@ ParksNRecs.Views.ReviewForm = Backbone.View.extend({
     this.listenTo(this.model, 'sync', this.render)
   },
 
-  spanner: function(event) {
-    event.preventDefault();
-    console.log("working");
+  setStars: function (event) {
+    var $currentTarget = $(event.currentTarget);
+    var score = 5 - $currentTarget.index()
+    var parent = $currentTarget.parent();
+    var children = parent.children();
+    children.each(function (index, element) {
+      var correctIndex = 5 - index;
+      if(correctIndex <= score){
+        $(element).removeClass('empty-star');
+        $(element).addClass('full-star');
+      }
+
+    })
   },
 
   submit: function(event) {
