@@ -11,6 +11,7 @@ class Api::ParksController < ApplicationController
 
   def show
     @park = Park.find(params[:id])
+    @overall = overall_total
     render :show
   end
 
@@ -28,6 +29,13 @@ class Api::ParksController < ApplicationController
   def park_params
     params.require(:park).permit(:name, :address, :city, :state, :zip,
     :weekday_hours, :saturday_hours, :parking, :restrooms, :telephone)
+  end
+
+  def overall_total
+    @park = Park.find(params[:id])
+    arr = @park.reviews.pluck(:overall_score)
+    total = arr.inject{ |sum, n| sum + n }
+    avg = total / @park.reviews.count
   end
 
 end
