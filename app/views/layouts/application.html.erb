@@ -4,9 +4,15 @@
   <title>ParksNRecs</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <% if current_user %>
+    <script>ParksNRecs.currentUserId = <%= current_user.id %></script>
+  <% end %>
+
   <%= csrf_meta_tags %>
 </head>
+
 <body>
 
 <%= yield %>
