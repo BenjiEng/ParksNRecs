@@ -11,7 +11,17 @@ class Api::ParksController < ApplicationController
 
   def show
     @park = Park.find(params[:id])
-    @overall = overall_total
+    reviews = @park.reviews
+    @avg_scores = {}
+    reviews.each do |review|
+      @avg_scores[:overall_score] = average(:overall_score, @park)
+      @avg_scores[:safety_score] = average(:safety_score, @park)
+      @avg_scores[:seating_score] = average(:seating_score, @park)
+      @avg_scores[:run_score] = average(:run_score, @park)
+      @avg_scores[:kid_score] = average(:kid_score, @park)
+      @avg_scores[:view_score] = average(:view_score, @park)
+      @avg_scores[:drug_score] = average(:drug_score, @park)
+    end
     render :show
   end
 
@@ -31,11 +41,9 @@ class Api::ParksController < ApplicationController
     :weekday_hours, :saturday_hours, :parking, :restrooms, :telephone)
   end
 
-  def overall_total
-    @park = Park.find(params[:id])
-    arr = @park.reviews.pluck(:overall_score)
-    total = arr.inject{ |sum, n| sum + n }
-    avg = total / @park.reviews.count
+  def average(category, park)
+    scores = @park.reviews.pluck(category.to_sym)
+    total = scores.inject{ |sum, n| sum + n }
+    avg = total.to_f / @park.reviews.count
   end
-
 end
