@@ -2,6 +2,7 @@
 
 <div class="row">
 <div class="map col-md-5"></div>
+
 <div class="col-md-1">
   <p class="category">Address: </p>
 </div>
@@ -9,7 +10,26 @@
   <span><%=park.escape('address')%></span>
   <br>
   <span><%=park.escape('city')%>, <%=park.escape('zip')%></span>
-  <br>
-  <span><%=park.escape('overall_avg')%></span>
 </div>
+
+<div class="col-md-1">
+  <p class="category">Overall: </p>
+  <p class="category">Safety: </p>
+  <p class="category">Seating: </p>
+  <p class="category">Running: </p>
+  <p class="category">Family: </p>
+  <p class="category">View: </p>
+  <p class="category">Drugz: </p>
 </div>
+
+<%if(park.get('avg_scores') ) {%>
+  <div class="col-md-6">
+    <p><%=park.get('avg_scores').overall_score%></p>
+    <p><%=park.get('avg_scores').safety_score%></p>
+    <p><%=park.get('avg_scores').seating_score%></p>
+    <p><%=park.get('avg_scores').run_score%></p>
+    <p><%=park.get('avg_scores').kid_score%></p>
+    <p><%=park.get('avg_scores').view_score%></p>
+    <p><%=park.get('avg_scores').drug_score%></p>
+  </div>
+<% } %>
