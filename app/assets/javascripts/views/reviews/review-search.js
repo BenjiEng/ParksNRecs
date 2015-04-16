@@ -12,9 +12,9 @@ ParksNRecs.Views.ReviewSearch = Backbone.CompositeView.extend({
   refreshIndex: function (event) {
     event.preventDefault();
     var query = this.$el.find('.search-field').val();
-    this.collection.fetch({ data: {name: query, house: 'myhouse'} }) 
+    this.collection.fetch({ data: {name: query}, success: _.bind(this.renderIndex, this) })
     // this.collection.fetch();
-    this.renderIndex()
+    // this.renderIndex()
   },
 
   renderIndex: function () {
