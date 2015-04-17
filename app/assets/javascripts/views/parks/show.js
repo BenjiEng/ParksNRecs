@@ -8,6 +8,8 @@ ParksNRecs.Views.ParkShow = Backbone.CompositeView.extend({
     // this.mapView = new ParksNRecs.Views.BasicMapShow({model: this.model, lat: 0, lng: 0});
     this.listenTo(this.model, 'sync', this.addMap);
     this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.model, 'sync', this.addReviews);
+
 
   },
 
@@ -18,7 +20,13 @@ ParksNRecs.Views.ParkShow = Backbone.CompositeView.extend({
   },
 
   addReviews: function () {
+    avgScores = this.model.get('avg_scores')
+    var that = this;
 
+    _.each(avgScores, function (score, category) {
+      var view = new ParksNRecs.Views.ScoreStars({score: score})
+      $('.' + category).html(view.render().$el)
+    })
   },
 
   render: function () {
@@ -27,7 +35,5 @@ ParksNRecs.Views.ParkShow = Backbone.CompositeView.extend({
     this.mapView && this.$('.map').html(this.mapView.$el);
     this.mapView && this.mapView.render();
     return this;
-
   },
-
 });

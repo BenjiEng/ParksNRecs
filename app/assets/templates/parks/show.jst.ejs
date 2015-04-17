@@ -24,12 +24,12 @@
 
 <%if(park.get('avg_scores') ) {%>
   <div class="col-md-6">
-    <p><%=park.get('avg_scores').overall_score%></p>
-    <p><%=park.get('avg_scores').safety_score%></p>
-    <p><%=park.get('avg_scores').seating_score%></p>
-    <p><%=park.get('avg_scores').run_score%></p>
-    <p><%=park.get('avg_scores').kid_score%></p>
-    <p><%=park.get('avg_scores').view_score%></p>
-    <p><%=park.get('avg_scores').drug_score%></p>
+    <p class="overall_score"></p>
+    <p class="safety_score"></p>
+    <p class="seating_score"></p>
+    <p class="run_score"></p>
+    <p class="kid_score"></p>
+    <p class="view_score"></p>
+    <p class="drug_score"></p>
   </div>
 <% } %>

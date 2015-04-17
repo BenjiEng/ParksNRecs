@@ -4,15 +4,11 @@ ParksNRecs.Routers.Router = Backbone.Router.extend({
     ParksNRecs.parks.fetch();
   },
 
-
   routes: {
     '': 'root',
     'parks/:id': 'parkShow',
     'review-search': 'reviewSearch',
     'parks/:id/write-review': 'reviewForm'
-
-
-
   },
 
    root: function () {
