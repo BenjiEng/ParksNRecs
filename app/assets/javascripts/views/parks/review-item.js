@@ -5,7 +5,8 @@ ParksNRecs.Views.ParkReviewItem = Backbone.View.extend({
 
 
   initialize: function () {
-    this.$el.attr('data-review-id', this.model.id)
+    console.log(this.model);
+    // this.$el.attr('data-review-id', this.model.id)
   },
 
   render: function () {

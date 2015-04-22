@@ -3,7 +3,6 @@ ParksNRecs.Views.ParkIndexItem = Backbone.View.extend({
   tagName: 'li',
   className: 'park-item',
 
-
   initialize: function () {
     this.$el.attr('data-park-id', this.model.id)
   },
