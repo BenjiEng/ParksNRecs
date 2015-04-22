@@ -12,6 +12,7 @@
   <span><%=park.escape('city')%>, <%=park.escape('zip')%></span>
 </div>
 
+<%if(park.get('avg_scores') ) {%>
 <div class="col-md-1">
   <p class="category">Overall: </p>
   <p class="category">Safety: </p>
@@ -21,8 +22,6 @@
   <p class="category">View: </p>
   <p class="category">Drugz: </p>
 </div>
-
-<%if(park.get('avg_scores') ) {%>
   <div class="col-md-6">
     <p class="overall_score"></p>
     <p class="safety_score"></p>

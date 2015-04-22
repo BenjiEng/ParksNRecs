@@ -1,5 +1,6 @@
 ParksNRecs.Views.ReviewForm = Backbone.View.extend({
   template: JST['reviews/form'],
+  errorTemplate: JST['errors'],
   events: {
     'click button': 'submit',
     'click span': 'setStars'
@@ -41,20 +42,27 @@ ParksNRecs.Views.ReviewForm = Backbone.View.extend({
     // Why is this not available in the each!?
     var data = {'review': {}};
     var that = this;
-    formElement.children().each(function (index, element) {
-      if(index + 1 != formElement.children().length){
-        data['review'][$(element).attr('id')] = $(element).attr('data-score')
-      }
+    this.$('tr').each(function (index, element) {
+        var category = $(element).find('.rating-cat').attr('id');
+        var score = $(element).find('.score').attr('data-score');
+        data['review'][category] = score
     })
-    // var attrs = this.$el.serializeJSON();
     data['review']['park_id'] = this.model.id;
     var newReview = new ParksNRecs.Models.Review(data);
-
     newReview.save({}, {
       success: function(){
         that.collection.add(newReview, {merge: true});
-        Backbone.history.navigate("/#/parks/" + this.model.id, {trigger: true});
+        Backbone.history.navigate("/#/parks/" + that.model.id, {trigger: true});
       },
+
+      error: function (model, response) {
+        that.$('.errors').html('')
+        if(response.responseJSON){
+          response.responseJSON.forEach(function (error) {
+            var content = that.errorTemplate({error: error})
+            that.$('.errors').prepend(content)
+          })
+        } }
     });
   },
 
