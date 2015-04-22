@@ -11,7 +11,7 @@ ParksNRecs.Views.ScoreStars = Backbone.View.extend({
     var that = this;
     this.$el.html(content);
     var stars = this.$el.find('.empty-star')
-    debugger
+    // debugger
     stars.each(function (index, element) {
       // debugger
       if(that.score >= index + 1) {

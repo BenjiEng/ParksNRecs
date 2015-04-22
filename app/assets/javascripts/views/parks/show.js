@@ -9,8 +9,6 @@ ParksNRecs.Views.ParkShow = Backbone.CompositeView.extend({
     this.listenTo(this.model, 'sync', this.addMap);
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model, 'sync', this.addReviews);
-
-
   },
 
   addMap: function () {
@@ -27,6 +25,11 @@ ParksNRecs.Views.ParkShow = Backbone.CompositeView.extend({
       var view = new ParksNRecs.Views.ScoreStars({score: score})
       $('.' + category).html(view.render().$el)
     })
+  },
+
+  addRevItem: function (review) {
+    var view = new ParksNRecs.Views.ReviewIndexItem({model: review});
+    this.addSubview('#review-items', view)
   },
 
   render: function () {
