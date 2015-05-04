@@ -2,8 +2,9 @@ ParksNRecs.Views.ReviewForm = Backbone.View.extend({
   template: JST['reviews/form'],
   errorTemplate: JST['errors'],
   events: {
-    'click button': 'submit',
-    'click span': 'setStars'
+    'click .submit_button': 'submit',
+    'click span': 'setStars',
+    'click .comment-field': 'clearField'
   },
 
   initialize: function() {
@@ -34,7 +35,9 @@ ParksNRecs.Views.ReviewForm = Backbone.View.extend({
     })
   },
 
-  // data: {review: {}},
+  clearField: function (event) {
+    this.$('.comment-field').html('')
+  },
 
   submit: function(event) {
     event.preventDefault();
@@ -60,7 +63,10 @@ ParksNRecs.Views.ReviewForm = Backbone.View.extend({
         if(response.responseJSON){
           response.responseJSON.forEach(function (error) {
             var content = that.errorTemplate({error: error})
-            that.$('.errors').prepend(content)
+            that.$('.errors').prepend(content);
+            setTimeout( function () {
+              $(".alert").fadeOut();
+            }, 5000);
           })
         } }
     });
