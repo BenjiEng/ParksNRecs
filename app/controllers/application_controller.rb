@@ -24,11 +24,13 @@ class ApplicationController < ActionController::Base
   end
 
   def require_signed_in!
-    redirect_to(new_session_url) unless signed_in?
+    # redirect_to(new_session_url)
+    if !signed_in?
+      render json: ["Log in first!"], status: 404
+    end
   end
 
   def require_signed_out!
     redirect_to (user_url(current_user)) if signed_in?
   end
-
 end

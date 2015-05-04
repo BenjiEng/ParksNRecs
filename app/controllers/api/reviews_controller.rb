@@ -1,5 +1,5 @@
 class Api::ReviewsController < ApplicationController
-  before_action  :ensure_logged_in
+  before_action :require_signed_in!
 
   def create
     @review = Review.new(review_params)
@@ -39,11 +39,5 @@ class Api::ReviewsController < ApplicationController
                                      :comments, :park_id)
     end
 
-    def ensure_logged_in
-      if !current_user
-        redirect_to new_session_url
-      end
-
-    end
 
 end
