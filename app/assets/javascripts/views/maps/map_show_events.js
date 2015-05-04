@@ -10,7 +10,6 @@ ParksNRecs.Views.EventMapShow = Backbone.View.extend({
     this.listenTo(this.collection, 'remove', this.removeMarker);
     this.lat = options.lat;
     this.lng = options.lng;
-    debugger
     var browserSupportFlag = new Boolean();
   },
 

@@ -18,7 +18,11 @@ ParksNRecs.Views.Root = Backbone.CompositeView.extend({
       that.$('.map').html(that.mapView.$el);
       that.mapView.render();
     }, function() {
-      handleNoGeolocation(browserSupportFlag);
+      that.mapView = new ParksNRecs.Views.EventMapShow({
+        collection: that.collection
+      });
+      that.$('.map').html(that.mapView.$el);
+      that.mapView.render();
     });
     }
 
