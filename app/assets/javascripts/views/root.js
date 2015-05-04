@@ -5,9 +5,24 @@ ParksNRecs.Views.Root = Backbone.CompositeView.extend({
   className: 'full-size',
 
   initialize: function () {
-    this.mapView = new ParksNRecs.Views.EventMapShow({
-      collection: this.collection
+    var that = this;
+    if(navigator.geolocation) {
+      browserSupportFlag = true;
+      navigator.geolocation.getCurrentPosition(function(position) {
+        initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+        var userLat = initialLocation['A']
+        var userLng = initialLocation['F']
+      that.mapView = new ParksNRecs.Views.EventMapShow({
+        collection: that.collection, lat: userLat, lng: userLng
+      });
+      that.$('.map').html(that.mapView.$el);
+      that.mapView.render();
+    }, function() {
+      handleNoGeolocation(browserSupportFlag);
     });
+    }
+
+
 
     this.parksIndex = new ParksNRecs.Views.ParksIndex({
       collection: this.collection
@@ -49,8 +64,8 @@ ParksNRecs.Views.Root = Backbone.CompositeView.extend({
     var content = this.template();
     this.$el.html(content);
     this.$('.sidebar').html(this.parksIndex.render().$el);
-    this.$('.map').html(this.mapView.$el);
-    this.mapView.render();
+    // this.$('.map').html(this.mapView.$el);
+    // this.mapView.render();
     return this;
   },
 

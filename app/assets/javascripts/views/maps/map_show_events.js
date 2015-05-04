@@ -4,16 +4,29 @@ ParksNRecs.Views.EventMapShow = Backbone.View.extend({
     id: "map-canvas"
   },
 
-  initialize: function () {
+  initialize: function (options) {
     this._markers = {};
-
     this.listenTo(this.collection, 'add', this.addMarker);
     this.listenTo(this.collection, 'remove', this.removeMarker);
+    this.lat = options.lat;
+    this.lng = options.lng;
+    debugger
+    var browserSupportFlag = new Boolean();
   },
 
   render: function () {
+    var that = this;
+    if (this.lng && this.lat) {
+      userLat = that.lat;
+      userLng = that.lng
+    } else {
+      alert("Geolocation service failed.")
+      userLat = 40.7833;
+      userLng = -122.4167;
+    }
+    debugger
     var mapOptions = {
-      center: { lat: 37.7833, lng: -122.4167},
+      center: { lat: userLat, lng: userLng},
       zoom: 12
     };
 
