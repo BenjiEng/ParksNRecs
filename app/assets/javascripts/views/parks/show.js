@@ -11,7 +11,7 @@ ParksNRecs.Views.ParkShow = Backbone.CompositeView.extend({
     this.listenTo(this.model, 'sync', this.addStars);
 
     this.collection = this.model.reviews();
-    this.listenTo(this.collection, 'add', this.addReviews);
+    this.listenTo(this.collection, 'add', this.addReview);
 
     // var that = this;
     // this.collection.each (function (review){
@@ -35,7 +35,8 @@ ParksNRecs.Views.ParkShow = Backbone.CompositeView.extend({
     })
   },
 
-  addReviews: function (review) {
+  addReview: function (review) {
+    debugger
     var view = new ParksNRecs.Views.ParkReviewItem({model: review});
     this.addSubview('#review-items', view)
   },
