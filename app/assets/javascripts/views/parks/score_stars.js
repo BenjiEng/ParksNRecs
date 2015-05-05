@@ -7,6 +7,7 @@ ParksNRecs.Views.ScoreStars = Backbone.View.extend({
   },
 
   render: function () {
+    
     var content = this.template();
     var that = this;
     this.$el.html(content);
