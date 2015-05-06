@@ -17,6 +17,19 @@
 @import "bootstrap";
 @import "font-awesome";
 
+body {
+  background-color: #E6E6E6;
+}
+
+.containment {
+  background-color: white;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+.index-header{
+  margin-left: 10px;
+}
 
 .search-field{
   -webkit-box-sizing: border-box;
