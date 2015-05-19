@@ -36,7 +36,6 @@ ParksNRecs.Views.ParkShow = Backbone.CompositeView.extend({
   },
 
   addReview: function (review) {
-    debugger
     var view = new ParksNRecs.Views.ParkReviewItem({model: review});
     this.addSubview('#review-items', view)
   },
@@ -44,7 +43,7 @@ ParksNRecs.Views.ParkShow = Backbone.CompositeView.extend({
   render: function () {
     var content = this.template({park: this.model});
     this.$el.html(content);
-    this.mapView && this.$('.map').html(this.mapView.$el);
+    this.mapView && this.$('.park-map').html(this.mapView.$el);
     this.mapView && this.mapView.render();
 
     this.attachSubviews();
