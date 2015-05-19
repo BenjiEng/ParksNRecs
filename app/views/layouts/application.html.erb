@@ -4,8 +4,7 @@
   <title>ParksNRecs</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
-
-  <%= javascript_include_tag 'application'%>
+  <%= javascript_include_tag 'application' %>
   <% if current_user %>
     <script>ParksNRecs.currentUserId = <%= current_user.id %></script>
   <% end %>
