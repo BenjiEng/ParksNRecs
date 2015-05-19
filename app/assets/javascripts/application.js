@@ -17,6 +17,7 @@
 //= require backbone
 //= require jquery.serializejson.min
 //= require parks_n_recs
+//= require shepherd.min
 //= require_tree ../templates
 //= require_tree ./models
 //= require_tree ./collections
