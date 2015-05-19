@@ -51,4 +51,5 @@ class Api::ParksController < ApplicationController
     total = scores.inject{ |sum, n| sum + n }
     avg = (total.to_f / park.reviews.count).to_f
   end
+
 end

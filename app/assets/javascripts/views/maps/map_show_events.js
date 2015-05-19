@@ -23,7 +23,7 @@ ParksNRecs.Views.EventMapShow = Backbone.View.extend({
       userLat = 40.7833;
       userLng = -122.4167;
     }
-    debugger
+    
     var mapOptions = {
       center: { lat: userLat, lng: userLng},
       zoom: 12
