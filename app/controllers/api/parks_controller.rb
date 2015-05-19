@@ -29,9 +29,14 @@ class Api::ParksController < ApplicationController
     if params[:name]
       @parks = Park.where('lower(parks.name) LIKE ?', "%#{params[:name].downcase}%")
     else
-    @parks = Park.all
+      @parks = Park.all
     end
-    render json: @parks
+
+    @avg_scores = {}
+    @parks.each do |park|
+      @avg_scores[park.id] = average(:overall_score, park)
+    end
+    render :index
   end
 
   private
@@ -42,8 +47,8 @@ class Api::ParksController < ApplicationController
   end
 
   def average(category, park)
-    scores = @park.reviews.pluck(category.to_sym)
+    scores = park.reviews.pluck(category.to_sym)
     total = scores.inject{ |sum, n| sum + n }
-    avg = total.to_f / @park.reviews.count
+    avg = (total.to_f / park.reviews.count).to_f
   end
 end
