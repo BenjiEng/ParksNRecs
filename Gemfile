@@ -15,7 +15,6 @@ gem 'bootstrap-sass'
 gem 'annotate'
 gem 'backbone-on-rails'
 gem 'figaro'
-gem 'filepicker-rails'
 
 gem "font-awesome-rails"
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
