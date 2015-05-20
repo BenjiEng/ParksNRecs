@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150320002553) do
+ActiveRecord::Schema.define(version: 20150520011202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,16 @@ ActiveRecord::Schema.define(version: 20150320002553) do
 
   add_index "parks", ["name"], name: "index_parks_on_name", using: :btree
   add_index "parks", ["zip"], name: "index_parks_on_zip", using: :btree
+
+  create_table "photos", force: true do |t|
+    t.integer  "user_id",     null: false
+    t.integer  "park_id",     null: false
+    t.string   "title"
+    t.text     "description"
+    t.string   "picture_url", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "reviews", force: true do |t|
     t.integer  "user_id",       null: false
