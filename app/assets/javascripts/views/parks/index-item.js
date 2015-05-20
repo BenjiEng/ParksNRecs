@@ -4,6 +4,7 @@ ParksNRecs.Views.ParkIndexItem = Backbone.View.extend({
   className: 'park-item',
 
   initialize: function () {
+    debugger
     this.$el.attr('data-park-id', this.model.id)
     // this.addStars();
   },
