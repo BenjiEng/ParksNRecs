@@ -33,9 +33,9 @@ class Api::ParksController < ApplicationController
     end
 
     @avg_scores = {}
-    # @parks.each do |park|
-    #   @avg_scores[park.id] = average(:overall_score, park)
-    # end
+    @parks.each do |park|
+      @avg_scores[park.id] = average(:overall_score, park)
+    end
     render :index
   end
 
