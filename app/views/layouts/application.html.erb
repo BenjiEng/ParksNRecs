@@ -4,9 +4,9 @@
   <title>ParksNRecs</title>
   <%= stylesheet_link_tag "application", media: 'all' %>
   <%= javascript_include_tag "application" %>
+  <%= filepicker_js_include_tag %>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
-
-  <script>filepicker.setKey( <%= ENV["filepicker_api_key"] %>);</script>
+  <script>filepicker.setKey( "AsaWYbFs3SFi9kPDLogeoz");</script>
 
   <% if current_user %>
     <script>ParksNRecs.currentUserId = <%= current_user.id %></script>
