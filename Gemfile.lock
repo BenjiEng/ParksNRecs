@@ -67,8 +67,18 @@ GEM
     ejs (1.1.1)
     erubis (2.7.0)
     execjs (2.5.2)
+<<<<<<< Updated upstream
     figaro (1.1.1)
       thor (~> 0.14)
+=======
+<<<<<<< HEAD
+    filepicker-rails (1.4.0)
+      rails (>= 3.2)
+=======
+    figaro (1.1.1)
+      thor (~> 0.14)
+>>>>>>> origin/master
+>>>>>>> Stashed changes
     font-awesome-rails (4.3.0.0)
       railties (>= 3.2, < 5.0)
     geocoder (1.2.8)
@@ -163,7 +173,15 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass
   coffee-rails (~> 4.0.0)
+<<<<<<< Updated upstream
   figaro
+=======
+<<<<<<< HEAD
+  filepicker-rails
+=======
+  figaro
+>>>>>>> origin/master
+>>>>>>> Stashed changes
   font-awesome-rails
   geocoder
   jbuilder (~> 2.0)
