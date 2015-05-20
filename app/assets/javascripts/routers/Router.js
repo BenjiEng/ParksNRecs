@@ -8,7 +8,8 @@ ParksNRecs.Routers.Router = Backbone.Router.extend({
     '': 'root',
     'parks/:id': 'parkShow',
     'review-search': 'reviewSearch',
-    'parks/:id/write-review': 'reviewForm'
+    'parks/:id/write-review': 'reviewForm',
+    'parks/:id/add-photo': 'addPhoto'
   },
 
    root: function () {
@@ -19,8 +20,14 @@ ParksNRecs.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
-  parkShow: function(id) {
+  addPhoto: function (id) {
+    var park = ParksNRecs.parks.getOrFetch(id);
+    var view = new ParksNRecs.Views.PhotoForm({
+    model: park})
+    this._swapView(view)
+  },
 
+  parkShow: function(id) {
     var park = ParksNRecs.parks.getOrFetch(id);
     var view = new ParksNRecs.Views.ParkShow({
       model: park
