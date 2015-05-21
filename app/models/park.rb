@@ -27,6 +27,7 @@ class Park < ActiveRecord::Base
   after_validation :geocode
 
   has_many :reviews
+  has_many :photos
 
 
   def full_address

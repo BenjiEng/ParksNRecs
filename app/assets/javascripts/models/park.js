@@ -7,10 +7,22 @@ ParksNRecs.Models.Park = Backbone.Model.extend({
     return this._reviews;
   },
 
+  photos: function() {
+    if (!this._photos) {
+      this._photo = new ParksNRecs.Collections.Photos();
+    }
+    return this._photos;
+  },
+
   parse: function(response) {
     if (response.reviews) {
       this.reviews().set(response.reviews, {parse: true});
       delete response.reviews;
+    }
+
+    if (response.photos) {
+      this.photos().set(response.photos, {parse: true});
+      delete response.photos;
     }
     return response;
   }

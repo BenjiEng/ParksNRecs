@@ -1,7 +1,8 @@
 class Api::PhotosController < ApplicationController
+  before_action :require_signed_in!
+
   def create
-    @photo = Photo.new(photo_params)
-    @photo.user_id = current_user.id
+    @photo = current_user.photos.new(photo_params)
     if @photo.save
       render json: @photo
     else

@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
   validates :session_token, :email, uniqueness: true
 
   has_many :reviews
+  has_many :photos
 
   attr_reader :password
   before_validation :ensure_session_token

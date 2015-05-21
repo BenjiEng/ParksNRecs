@@ -22,8 +22,9 @@ ParksNRecs.Routers.Router = Backbone.Router.extend({
 
   addPhoto: function (id) {
     var park = ParksNRecs.parks.getOrFetch(id);
+    var photos = ParksNRecs.Collections.Photos({park_id: id});
     var view = new ParksNRecs.Views.PhotoForm({
-    model: park})
+    model: park, collection: photos})
     this._swapView(view)
   },
 

@@ -1,7 +1,16 @@
-<h1>Add Photo</h1>
+<h2>Add Photo to <%=park.escape('name')%> </h2>
+<div class="errors"></div>
 
-<input type="filepicker" class="btn btn-default filepickbutton" name="photo[filepicker_url]"
-data-fp-mimetype="image/*">
+<!-- <form class="photo-form"> -->
 
+
+<label>Title</label>
 <input type="text" name="photo[title]" id="photo_title" value="">
+<br><label>DescriptionTitle</label>
 <input type="text" name="photo[description]" id="photo_description" value="">
+<br>
+<input class="btn btn-default file-pick-button" value="Pick File" name="photo[picture_url]"
+data-fp-mimetype="image/*">
+<br>
+<input type="submit" id="add-photo" name="name" value="Add Photo">
+<!-- </form> -->

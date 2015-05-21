@@ -11,6 +11,7 @@ ParksNRecs.Views.ParkShow = Backbone.CompositeView.extend({
     this.listenTo(this.model, 'sync', this.addStars);
 
     this.collection = this.model.reviews();
+    this.photos = this.model.photos();
     this.listenTo(this.collection, 'add', this.addReview);
 
     // var that = this;
