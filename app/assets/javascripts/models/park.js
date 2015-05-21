@@ -9,7 +9,7 @@ ParksNRecs.Models.Park = Backbone.Model.extend({
 
   photos: function() {
     if (!this._photos) {
-      this._photo = new ParksNRecs.Collections.Photos();
+      this._photos = new ParksNRecs.Collections.Photos();
     }
     return this._photos;
   },

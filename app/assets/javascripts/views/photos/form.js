@@ -4,8 +4,8 @@ ParksNRecs.Views.PhotoForm = Backbone.View.extend({
   tagName: 'form',
   initialize: function () {
       this.pic_url = '';
-      // this.collection = this.model.photos();
       this.listenTo(this.model, 'sync', this.render);
+      this.collection = this.model.photos();
   },
 
   events: {
@@ -14,7 +14,7 @@ ParksNRecs.Views.PhotoForm = Backbone.View.extend({
   },
 
   addPhoto: function () {
-    var that = this
+    var that = this;
     event.preventDefault();
     var data = this.$el.serializeJSON();
     data['photo']['picture_url'] = this.pic_url;
@@ -24,7 +24,7 @@ ParksNRecs.Views.PhotoForm = Backbone.View.extend({
       debugger
       console.log('ya!');
       that.collection.add(photo, {merge: true});
-      Backbone.history.navigate("/parks/" + this.model.id);
+      Backbone.history.navigate("/parks/" + that.model.id, {trigger: true});
     },
     error: function (model, response) {
       that.$('.errors').html('')
@@ -60,7 +60,6 @@ ParksNRecs.Views.PhotoForm = Backbone.View.extend({
     var content = this.template({park: this.model})
     this.$el.html(content)
     return this;
-
   }
 
 
