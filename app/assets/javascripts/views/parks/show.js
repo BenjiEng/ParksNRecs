@@ -5,24 +5,21 @@ ParksNRecs.Views.ParkShow = Backbone.CompositeView.extend({
   },
 
   initialize: function() {
-    // this.mapView = new ParksNRecs.Views.BasicMapShow({model: this.model, lat: 0, lng: 0});
     this.listenTo(this.model, 'sync', this.addMap);
     this.listenTo(this.model, 'sync', this.render);
     this.listenTo(this.model, 'sync', this.addStars);
 
     this.collection = this.model.reviews();
-    this.photos = this.model.photos();
     this.listenTo(this.collection, 'add', this.addReview);
 
-    // var that = this;
-    // this.collection.each (function (review){
-    //   that.addRevItem(review)
-    // });
+    this.photos = this.model.photos();
+    this.listenTo(this.photos, 'add', this.addPhoto);
   },
 
   addMap: function () {
-    this.mapView = new ParksNRecs.Views.BasicMapShow({model: this.model, lat: this.model.get('latitude'),
-    lng: this.model.get('longitude')
+    this.mapView = new ParksNRecs.Views.BasicMapShow({model: this.model,
+      lat: this.model.get('latitude'),
+      lng: this.model.get('longitude')
     });
   },
 
@@ -34,6 +31,11 @@ ParksNRecs.Views.ParkShow = Backbone.CompositeView.extend({
       var view = new ParksNRecs.Views.ScoreStars({score: score})
       $('.' + category).html(view.render().$el)
     })
+  },
+
+  addPhoto: function(photo) {
+    var view = new ParksNRecs.Views.ParkPhotoItem({model: photo});
+    this.addSubview('#photo-items', view)
   },
 
   addReview: function (review) {

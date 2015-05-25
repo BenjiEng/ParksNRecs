@@ -4,3 +4,5 @@ json.extract! @park, :name, :address, :city, :state, :zip, :weekday_hours,
 json.avg_scores @avg_scores
 
 json.reviews @park.reviews
+
+json.photos @park.photos

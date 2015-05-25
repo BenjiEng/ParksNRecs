@@ -1,61 +1,65 @@
 <div class="containment">
-<div class="row">
-<div class="col-md-11 col-md-offset-1"><h1><%=park.escape('name')%></h1></div>
-</div>
-
-<div class="row">
-<%if(park.get('avg_scores') ) {%>
-  <div class="col-md-1 col-md-offset-1">
-    <p class="category overall">Overall: </p>
+  <div class="row">
+    <div class="col-md-11 col-md-offset-1"><h1><%=park.escape('name')%></h1></div>
   </div>
 
-  <div class="col-md-4">
-      <p class="overall_score"></p>
-  </div>
+  <div class="row">
+    <%if(park.get('avg_scores') ) {%>
+      <div class="col-md-1 col-md-offset-1">
+        <p class="category overall">Overall: </p>
+      </div>
 
-<% } %>
-  <div class="col-md-4">
-    <a class="write-review-button" href="#/parks/<%=park.get('id')%>/write-review">Write a review</a>
-    <a class="write-review-button" href="#/parks/<%=park.get('id')%>/add-photo">Add Photo</a>
+      <div class="col-md-4">
+          <p class="overall_score"></p>
+      </div>
+    <% } %>
+
+    <div class="col-md-4">
+      <a class="write-review-button" href="#/parks/<%=park.get('id')%>/write-review">Write a review</a>
+      <a class="write-review-button" href="#/parks/<%=park.get('id')%>/add-photo">Add Photo</a>
+    </div>
   </div>
-</div>
 
 <div class="row">
-<div class="park-map col-md-5 col-md-offset-1"></div>
+  <div class="park-map col-md-5 col-md-offset-1"></div>
 
 
-<div class="col-md-1">
-  <p class="category">Address: </p>
-</div>
-<div class="col-md-5 park-info" >
-  <span><%=park.escape('address')%></span>
-  <br>
-  <span><%=park.escape('city')%>, <%=park.escape('zip')%></span>
-</div>
+  <div class="col-md-1">
+    <p class="category">Address: </p>
+  </div>
+  <div class="col-md-5 park-info" >
+    <span><%=park.escape('address')%></span>
+    <br>
+    <span><%=park.escape('city')%>, <%=park.escape('zip')%></span>
+  </div>
 
-<%if(park.get('avg_scores') ) {%>
-<div class="col-md-1">
-  <p class="category">Safety: </p>
-  <p class="category">Seating: </p>
-  <p class="category">Running: </p>
-  <p class="category">Family: </p>
-  <p class="category">View: </p>
-  <p class="category">Drugz: </p>
-</div>
+  <%if(park.get('avg_scores') ) {%>
+    <div class="col-md-1">
+      <p class="category">Safety: </p>
+      <p class="category">Seating: </p>
+      <p class="category">Running: </p>
+      <p class="category">Family: </p>
+      <p class="category">View: </p>
+      <p class="category">Drugz: </p>
+    </div>
 
-    <p class="safety_score"></p>
-    <p class="seating_score"></p>
-    <p class="run_score"></p>
-    <p class="kid_score"></p>
-    <p class="view_score"></p>
-    <p class="drug_score"></p>
-</div>
-<% } %>
+    <div>
+        <p class="safety_score"></p>
+        <p class="seating_score"></p>
+        <p class="run_score"></p>
+        <p class="kid_score"></p>
+        <p class="view_score"></p>
+        <p class="drug_score"></p>
+    </div>
+  <% } %>
+  <div>Photos
+    <ul id='photo-items'></ul>
+  </div>
 </div>
 
 <div class="row col-md-offset-1" >
-
-<h2>Reviews</h2>
-<ul id='review-items'></ul>
+  <h2>Reviews</h2>
+  <ul id='review-items'></ul>
 </div>
+
 </div>
