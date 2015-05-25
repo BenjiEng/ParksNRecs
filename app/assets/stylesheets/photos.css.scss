@@ -1,3 +1,23 @@
 // Place all the styles related to the Photos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.photo-header {
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
+.photo-label {
+  padding-top: 5px;
+  margin-left: 15px;
+}
+
+.file-pick-button {
+  margin-top: 5px;
+  margin-left: 15px;
+}
+
+.add-file-btn {
+  margin-top: 5px;
+  margin-left: 15px;
+}

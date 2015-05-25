@@ -1,16 +1,26 @@
-<h2>Add Photo to <%=park.escape('name')%> </h2>
-<div class="errors"></div>
+<div class="containment">
+  <h2 class="photo-header">Add Photo to <%=park.escape('name')%> </h2>
+  <div class="errors"></div>
 
-<!-- <form class="photo-form"> -->
+  <!-- <form class="photo-form"> -->
 
+  <div class="row">
+    <label class="photo-label col-md-2">Title:</label>
+    <input class="col-md-3" type="text" name="photo[title]" id="photo_title" value="">
+  </div>
 
-<label>Title</label>
-<input type="text" name="photo[title]" id="photo_title" value="">
-<br><label>Description</label>
-<input type="text" name="photo[description]" id="photo_description" value="">
-<br>
-<input class="btn btn-default file-pick-button" value="Pick File" name="photo[picture_url]"
-data-fp-mimetype="image/*">
-<br>
-<input type="submit" id="add-photo" name="name" value="Add Photo">
-<!-- </form> -->
+  <div class="row">
+    <label class="photo-label col-md-2">Description:</label>
+    <input class="col-md-3" type="text" name="photo[description]" id="photo_description" value="">
+  </div>
+
+  <div class="row">
+    <input class="btn btn-default file-pick-button col-md-3" value="Pick File" name="photo[picture_url]"
+    data-fp-mimetype="image/*">
+  </div>
+
+  <div class="row">
+    <input class="add-file-btn col-md-3" type="submit" id="add-photo" name="name" value="Add Photo">
+  </div>
+  <!-- </form> -->
+</div>
