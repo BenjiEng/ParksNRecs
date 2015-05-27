@@ -1,5 +1,5 @@
 class Api::ParksController < ApplicationController
-
+  
   def create
     @park = Park.new(park_params)
     if @park.save
