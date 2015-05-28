@@ -40,7 +40,6 @@ ParksNRecs.Views.ReviewForm = Backbone.View.extend({
   },
 
   submit: function(event) {
-    debugger
     event.preventDefault();
     var formElement = $(event.currentTarget).parent()
     // Why is this not available in the each!?
@@ -53,7 +52,6 @@ ParksNRecs.Views.ReviewForm = Backbone.View.extend({
     })
     data['review']['park_id'] = this.model.id;
     var newReview = new ParksNRecs.Models.Review(data);
-    debugger
     newReview.save({}, {
       success: function(){
         that.collection.add(newReview, {merge: true});

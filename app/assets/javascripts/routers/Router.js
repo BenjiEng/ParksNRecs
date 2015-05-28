@@ -9,8 +9,8 @@ ParksNRecs.Routers.Router = Backbone.Router.extend({
     'parks/new': 'parkForm',
     'parks/:id': 'parkShow',
     'parks/:id/write-review': 'reviewForm',
-    'parks/:id/add-photo': 'addPhoto'
-    'review-search': 'reviewSearch',
+    'parks/:id/add-photo': 'addPhoto',
+    'review-search': 'reviewSearch'
   },
 
    root: function () {
