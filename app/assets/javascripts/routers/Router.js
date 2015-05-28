@@ -14,7 +14,6 @@ ParksNRecs.Routers.Router = Backbone.Router.extend({
   },
 
    root: function () {
-    //  ParksNRecs.parks.fetch();
     var view = new ParksNRecs.Views.Root({
       collection: ParksNRecs.parks
     });
@@ -37,7 +36,9 @@ ParksNRecs.Routers.Router = Backbone.Router.extend({
   },
 
   parkForm: function() {
-    var view = new ParksNRecs.Views.ParkForm({});
+    debugger
+    var park = new ParksNRecs.Models.Park();
+    var view = new ParksNRecs.Views.ParkForm({ model: park });
     this._swapView(view)
   },
 

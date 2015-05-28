@@ -1,11 +1,11 @@
 class Api::ParksController < ApplicationController
-  
+
   def create
     @park = Park.new(park_params)
     if @park.save
       render json: @park
     else
-      flash.new[:errors] = @park.errors.full_messages
+      render json: @park.errors.full_messages, status: :unprocessable_entity
     end
   end
 
