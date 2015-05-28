@@ -6,11 +6,11 @@ ParksNRecs.Routers.Router = Backbone.Router.extend({
 
   routes: {
     '': 'root',
-    'parks/:id': 'parkShow',
     'parks/new': 'parkForm',
-    'review-search': 'reviewSearch',
+    'parks/:id': 'parkShow',
     'parks/:id/write-review': 'reviewForm',
     'parks/:id/add-photo': 'addPhoto'
+    'review-search': 'reviewSearch',
   },
 
    root: function () {
@@ -20,10 +20,9 @@ ParksNRecs.Routers.Router = Backbone.Router.extend({
     this._swapView(view);
   },
 
-  addPhoto: function (id) {
-    var park = ParksNRecs.parks.getOrFetch(id);
-    var view = new ParksNRecs.Views.PhotoForm({
-    model: park})
+  parkForm: function() {
+    var park = new ParksNRecs.Models.Park();
+    var view = new ParksNRecs.Views.ParkForm({ model: park });
     this._swapView(view)
   },
 
@@ -35,10 +34,10 @@ ParksNRecs.Routers.Router = Backbone.Router.extend({
     this._swapView(view)
   },
 
-  parkForm: function() {
-    debugger
-    var park = new ParksNRecs.Models.Park();
-    var view = new ParksNRecs.Views.ParkForm({ model: park });
+  addPhoto: function (id) {
+    var park = ParksNRecs.parks.getOrFetch(id);
+    var view = new ParksNRecs.Views.PhotoForm({
+    model: park})
     this._swapView(view)
   },
 
@@ -49,15 +48,6 @@ ParksNRecs.Routers.Router = Backbone.Router.extend({
     this._swapView(view)
   },
 
-  reviewForm: function (id) {
-    var park = ParksNRecs.parks.getOrFetch(id);
-    var view = new ParksNRecs.Views.ReviewForm({
-      model: park
-    });
-    this._swapView(view)
-
-  },
-
   _swapView: function (view) {
     this.currentView && this.currentView.remove();
     this.currentView = view;
@@ -65,5 +55,4 @@ ParksNRecs.Routers.Router = Backbone.Router.extend({
     view.render();
   }
 
-
-})
+});
