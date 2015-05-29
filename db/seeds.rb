@@ -6,7 +6,10 @@ User.create!([
 Park.create!([
   {name: "Dolores Park", address: "19th & Dolores St", city: "San Francisco", state: "CA", zip: "94114", weekday_hours: nil, saturday_hours: nil, sunday_hours: nil, parking: nil, restrooms: nil, telephone: nil, latitude: 37.7598191, longitude: -122.4260362},
   {name: "Buena Vista Park", address: "Buena Vista & Haight", city: "San Francisco", state: "CA", zip: "94117", weekday_hours: nil, saturday_hours: nil, sunday_hours: nil, parking: nil, restrooms: nil, telephone: nil, latitude: 37.770437, longitude: -122.442954},
-  {name: "South Sunset Playgroud", address: "40th and Wawona", city: "San Francisco", state: "CA", zip: "94116", weekday_hours: nil, saturday_hours: nil, sunday_hours: nil, parking: nil, restrooms: nil, telephone: nil, latitude: 37.7364677, longitude: -122.4978034}
+  {name: "South Sunset Playground", address: "40th & Wawona", city: "San Francisco", state: "CA", zip: "94116", weekday_hours: nil, saturday_hours: nil, sunday_hours: nil, parking: nil, restrooms: nil, telephone: nil, latitude: 37.7364677, longitude: -122.4978034},
+  {name: "West Sunset Playground", address: "3223 Ortega St.", city: "San Francisco", state: "CA", zip: "94116", weekday_hours: nil, saturday_hours: nil, sunday_hours: nil, parking: true, restrooms: true, telephone: nil, latitude: 37.7490 , longitude: -122.4980},
+  {name: "Golden Gate Park", address: "501 Stanyan St.", city: "San Francisco", state: "CA", zip: "94117", weekday_hours: nil, saturday_hours: nil, sunday_hours: nil, parking: nil, restrooms: nil, telephone: nil, latitude: 37.7718, longitude: -122.4547},
+  {name: "Argonne Playground", address: "18th & Geary", city: "San Francisco", state: "CA", zip: "94121", weekday_hours: nil, saturday_hours: nil, sunday_hours: nil, parking: false, restrooms: true, telephone: nil, latitude: 37.7794, longitude: -122.4777}
 ])
 Review.create!([
   {user_id: 1, overall_score: 3, safety_score: 4, seating_score: 1, run_score: 3, kid_score: 2, view_score: 5, drug_score: 5, comments: "This is a dank park. SO many HOES!", park_id: 1},

@@ -15,6 +15,9 @@ ul {
 
 #park-items {
   padding: 1px;
+  height: 300px;
+  overflow: hidden;
+  overflow-y:scroll;
 }
 
 .ind-str {
