@@ -9,15 +9,32 @@ ul {
   position: relative;
 }
 
+.index-header {
+  color: #0C6637;
+}
+
 .park-items-header{
   margin-top: 0px;
+  color: #0C6637;
+  font-size: 18px;
 }
 
 #park-items {
   padding: 1px;
-  height: 300px;
+  height: 440px;
+  width: 200px;
   overflow: hidden;
-  overflow-y:scroll;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
 }
 
 .ind-str {
