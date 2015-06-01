@@ -20,46 +20,48 @@
     </div>
   </div>
 
-<div class="row">
-  <div class="park-map col-md-5 col-md-offset-1"></div>
+  <div class="row">
+    <div class="park-map col-md-5 col-md-offset-1"></div>
 
 
-  <div class="col-md-1">
-    <p class="category">Address: </p>
-  </div>
-  <div class="col-md-5 park-info" >
-    <span><%=park.escape('address')%></span>
-    <br>
-    <span><%=park.escape('city')%>, <%=park.escape('zip')%></span>
-  </div>
-
-  <%if(park.get('avg_scores') ) {%>
     <div class="col-md-1">
-      <p class="category">Safety: </p>
-      <p class="category">Seating: </p>
-      <p class="category">Running: </p>
-      <p class="category">Family: </p>
-      <p class="category">View: </p>
-      <p class="category">Drugz: </p>
+      <p class="category">Address: </p>
+    </div>
+    <div class="col-md-5 park-info" >
+      <span><%=park.escape('address')%></span>
+      <br>
+      <span><%=park.escape('city')%>, <%=park.escape('zip')%></span>
     </div>
 
-    <div>
-        <p class="safety_score"></p>
-        <p class="seating_score"></p>
-        <p class="run_score"></p>
-        <p class="kid_score"></p>
-        <p class="view_score"></p>
-        <p class="drug_score"></p>
+    <%if(park.get('avg_scores') ) {%>
+      <div class="col-md-1">
+        <p class="category">Safety: </p>
+        <p class="category">Seating: </p>
+        <p class="category">Running: </p>
+        <p class="category">Family: </p>
+        <p class="category">View: </p>
+        <p class="category">Drugz: </p>
+      </div>
+
+      <div>
+          <p class="safety_score"></p>
+          <p class="seating_score"></p>
+          <p class="run_score"></p>
+          <p class="kid_score"></p>
+          <p class="view_score"></p>
+          <p class="drug_score"></p>
+      </div>
+    <% } %>
+    <div>Photos
+      <ul id='photo-items'></ul>
     </div>
-  <% } %>
-  <div>Photos
-    <ul id='photo-items'></ul>
   </div>
-</div>
 
-<div class="row col-md-offset-1" >
-  <h2>Reviews</h2>
-  <ul id='review-items'></ul>
-</div>
+  <div class="row">
+    <div class="col-md-offset-1">
+      <h2>Reviews</h2>
+      <ul id='review-items'></ul>
+    </div>
+  </div>
 
 </div>

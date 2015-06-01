@@ -12,10 +12,10 @@ Park.create!([
   {name: "Argonne Playground", address: "18th & Geary", city: "San Francisco", state: "CA", zip: "94121", weekday_hours: nil, saturday_hours: nil, sunday_hours: nil, parking: false, restrooms: true, telephone: nil, latitude: 37.7794, longitude: -122.4777}
 ])
 Review.create!([
-  {user_id: 1, overall_score: 3, safety_score: 4, seating_score: 1, run_score: 3, kid_score: 2, view_score: 5, drug_score: 5, comments: "This is a dank park. SO many HOES!", park_id: 1},
-  {user_id: 1, overall_score: 1, safety_score: 1, seating_score: 1, run_score: 1, kid_score: 1, view_score: 1, drug_score: 1, comments: nil, park_id: 2},
-  {user_id: 1, overall_score: 5, safety_score: 1, seating_score: 1, run_score: 1, kid_score: 3, view_score: 3, drug_score: 3, comments: nil, park_id: 3},
-  {user_id: 2, overall_score: 3, safety_score: 4, seating_score: 1, run_score: 3, kid_score: 2, view_score: 5, drug_score: 5, comments: "This is not a dank park. Not enough HOES!", park_id: 1},
-  {user_id: 3, overall_score: 2, safety_score: 3, seating_score: 2, run_score: 2, kid_score: 4, view_score: 2, drug_score: 2, comments: "Not enough hobos", park_id: 2},
-  {user_id: 3, overall_score: 1, safety_score: 1, seating_score: 1, run_score: 1, kid_score: 1, view_score: 1, drug_score: 1, comments: nil, park_id: 1}
+  {user_id: 1, overall_score: 3, safety_score: 4, seating_score: 1, run_score: 3, kid_score: 2, view_score: 5, drug_score: 5, comments: "This park is fairly nice. There is a lot of seating and I enjoy coming here during the evenings.", park_id: 1},
+  {user_id: 1, overall_score: 1, safety_score: 1, seating_score: 1, run_score: 1, kid_score: 1, view_score: 1, drug_score: 1, comments: "Not too shabby.", park_id: 2},
+  {user_id: 1, overall_score: 5, safety_score: 1, seating_score: 1, run_score: 1, kid_score: 3, view_score: 3, drug_score: 3, comments: "I really like how well kept the grass is.", park_id: 3},
+  {user_id: 2, overall_score: 3, safety_score: 4, seating_score: 1, run_score: 3, kid_score: 2, view_score: 5, drug_score: 5, comments: "If there were more trees this park would be great!", park_id: 1},
+  {user_id: 3, overall_score: 2, safety_score: 3, seating_score: 2, run_score: 2, kid_score: 4, view_score: 2, drug_score: 2, comments: "Too many ruffians.", park_id: 2},
+  {user_id: 3, overall_score: 1, safety_score: 1, seating_score: 1, run_score: 1, kid_score: 1, view_score: 1, drug_score: 1, comments: "The bathrooms are surprisingly clean.", park_id: 1}
 ])

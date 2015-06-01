@@ -24,6 +24,7 @@ ParksNRecs.Models.Park = Backbone.Model.extend({
       this.photos().set(response.photos, {parse: true});
       delete response.photos;
     }
+    
     return response;
   }
 
