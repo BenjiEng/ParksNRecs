@@ -14,8 +14,6 @@ ParksNRecs.Views.PhotoSlider = Backbone.CompositeView.extend({
   },
 
   next: function (event) {
-    // $('.next').click(function() {
-    //   clearInterval(autoSlide);
     currentIndex += 1;
     if (currentIndex > this.itemAmt - 1) {
       currentIndex = 0;
@@ -36,12 +34,6 @@ ParksNRecs.Views.PhotoSlider = Backbone.CompositeView.extend({
     var item = this.$('.slide-container div').eq(currentIndex);
     items.hide();
     item.css('display', 'inline-block');
-
-    // function cycleItems() {
-    //   var item = $('.slide-container div').eq(currentIndex);
-    //   items.hide();
-    //   item.css('display','inline-block');
-    // }
   },
 
   render: function () {

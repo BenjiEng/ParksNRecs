@@ -1,7 +1,7 @@
 ParksNRecs.Views.ParkForm = Backbone.View.extend({
   template: JST['parks/form'],
   errorTemplate: JST['errors'],
-  events: {'click .submit_button': 'submit'},
+  events: {'click .submit_button': 'submit'}, 
 
   initialize: function() {
    this.render();
