@@ -5,6 +5,7 @@ ParksNRecs.Views.ParkPhotoItem = Backbone.CompositeView.extend({
 
 
   initialize: function () {
+    this.listenTo(this.model, 'sync', this.render)
   },
 
 
