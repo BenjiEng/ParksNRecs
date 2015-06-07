@@ -14,25 +14,28 @@ ParksNRecs.Views.PhotoSlider = Backbone.CompositeView.extend({
   },
 
   next: function (event) {
+    var lastIndex = currentIndex;
     currentIndex += 1;
-    if (currentIndex > this.itemAmt - 1) {
+
+    if (currentIndex > itemAmt - 1) {
       currentIndex = 0;
     }
-    this.cycleItems();
+
+    this.cycleItems(lastIndex, currentIndex);
   },
 
   prev: function (event) {
+    var lastIndex = currentIndex;
     currentIndex -= 1;
     if (currentIndex < 0) {
-      currentIndex = this.itemAmt - 1;
+      currentIndex = items.length - 1;
     }
-    this.cycleItems();
+    this.cycleItems(lastIndex, currentIndex);
   },
 
-  cycleItems: function () {
-    debugger
+  cycleItems: function (lastIndex, currentIndex) {
     var item = this.$('.slide-container div').eq(currentIndex);
-    items.hide();
+    this.$('.slide-container div').eq(lastIndex).hide();
     item.css('display', 'inline-block');
   },
 
