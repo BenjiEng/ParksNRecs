@@ -24,14 +24,28 @@
     <div class="park-map col-md-5 col-md-offset-1"></div>
 
 
-    <div class="col-md-1">
-      <p class="category">Address: </p>
-    </div>
-    <div class="col-md-5 park-info" >
+
+
+    <div class="col-md-5 photos" >
+    <h2>Photos</h2>
+    <ul id='photo-items'></ul>
+    <div id='photo-slider'></div>
+  </div>
+</div>
+
+
+    <div class="row">
+
+      <div class="col-md-1">
+        <p class="category">Address: </p>
+      </div>
+
+
+    <!-- <div class="col-md-5 park-info" > -->
       <span><%=park.escape('address')%></span>
       <br>
       <span><%=park.escape('city')%>, <%=park.escape('zip')%></span>
-    </div>
+    <!-- </div> -->
 
     <%if(park.get('avg_scores') ) {%>
       <div class="col-md-1">
@@ -53,10 +67,10 @@
       </div>
     <% } %>
 
-      <h2>Photos</h2>
-      <ul id='photo-items'></ul>
-      <div id='photo-slider'></div>
   </div>
+
+
+
 
   <div class="row">
     <div class="col-md-11 col-md-offset-1">
