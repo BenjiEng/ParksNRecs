@@ -19,3 +19,8 @@ Review.create!([
   {user_id: 3, overall_score: 2, safety_score: 3, seating_score: 2, run_score: 2, kid_score: 4, view_score: 2, drug_score: 2, comments: "Too many ruffians.", park_id: 2},
   {user_id: 3, overall_score: 1, safety_score: 1, seating_score: 1, run_score: 1, kid_score: 1, view_score: 1, drug_score: 1, comments: "The bathrooms are surprisingly clean.", park_id: 1}
 ])
+Photo.create!([
+  {user_id: 1, park_id: 1, title: "Dolores Park, January 2015", description: "Such a great view from the top!", picture_url: "https://www.filepicker.io/api/file/vpiKMjLGR7eEhiwooJQY"},
+  {user_id: 1, park_id: 1, title: "Dolores January 2015 pt. 2", description: "More views", picture_url: "https://www.filepicker.io/api/file/M7lijMSIalUfrbN3LjwQ"},
+  {user_id: 1, park_id: 1, title: "Night Life", description: "Dolores at night", picture_url: "https://www.filepicker.io/api/file/oQb5EUcyShkARVKIQ4wY"}
+])
