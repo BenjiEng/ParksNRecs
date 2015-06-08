@@ -13,8 +13,6 @@ ParksNRecs.Views.ParkShow = Backbone.CompositeView.extend({
     this.listenTo(this.collection, 'add', this.addReview);
 
     this.photos = this.model.photos();
-    // this.listenTo(this.photos, 'add', this.addPhoto);
-
     this.addSlider();
   },
 
@@ -35,15 +33,10 @@ ParksNRecs.Views.ParkShow = Backbone.CompositeView.extend({
     })
   },
 
-  addPhoto: function(photo) {
-    var view = new ParksNRecs.Views.ParkPhotoItem({model: photo});
-    this.addSubview('#photo-items', view)
-  },
-
   addSlider: function(){
-    var view = new ParksNRecs.Views.PhotoSlider();
+    var view = new ParksNRecs.Views.PhotoSlider({collection: this.photos});
     this.addSubview('#photo-slider', view);
-    $('#carousel').elastislide();
+    // $('#carousel').elastislide();
   },
 
   addReview: function (review) {

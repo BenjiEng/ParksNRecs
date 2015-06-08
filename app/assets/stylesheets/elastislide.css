@@ -1,6 +1,4 @@
-/* Elastislide Style */
-
-.elastislide-list {
+/*.elastislide-list {
 	list-style-type: none;
 	display: none;
 }
@@ -10,7 +8,7 @@
 }
 
 .elastislide-carousel ul li {
-	min-width: 20px; /* minimum width of the image (min width + border) */
+	min-width: 20px;
 }
 
 .elastislide-wrapper {
@@ -83,8 +81,6 @@
 	max-width: 100%;
 }
 
-/* Navigation Arrows */
-
 .elastislide-wrapper nav span {
 	position: absolute;
 	background: #ddd url(../images/nav.png) no-repeat 4px 3px;
@@ -123,4 +119,4 @@
 	bottom: 10px;
 	top: auto;
 	background-position: -17px -18px;
-}
+}*/

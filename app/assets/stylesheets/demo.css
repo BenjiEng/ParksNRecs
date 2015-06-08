@@ -1,4 +1,4 @@
-/* General Demo Style */
+/*
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 
 html { height: 100%; }
@@ -13,11 +13,11 @@ html { height: 100%; }
 	margin: 0;
 }
 
-/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+
 .clearfix:before,
 .clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+    content: " ";
+    display: table;
 }
 
 .clearfix:after {
@@ -89,7 +89,7 @@ a {
 	line-height: 22px;
 }
 
-/* Header Style */
+
 .codrops-top {
 	line-height: 24px;
 	font-size: 11px;
@@ -124,7 +124,7 @@ a {
 	display: block;
 }
 
-/* Demo Buttons Style */
+
 .codrops-demos {
 	float: right;
 	clear: none;
@@ -197,4 +197,4 @@ a {
 		clear: both;
 	}
 }
-
+*/

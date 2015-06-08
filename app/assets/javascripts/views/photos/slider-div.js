@@ -1,9 +1,8 @@
-ParksNRecs.Views.PhotoSlider = Backbone.CompositeView.extend({
-  template: JST['photos/slider'],
+ParksNRecs.Views.PhotoSliderDiv = Backbone.CompositeView.extend({
+  template: JST['photos/slider-div'],
 
   initialize: function() {
-    this.listenTo(this.collection, 'add', this.addSliderItem);
-    // this.listenTo(this.collection, 'add', this.addSliderDiv);
+    this.listenTo(this.model, 'sync', this.addSliderItem)
   },
 
   addSliderItem: function(sliderItem) {
@@ -12,7 +11,7 @@ ParksNRecs.Views.PhotoSlider = Backbone.CompositeView.extend({
   },
 
   render: function () {
-    var content = this.template();
+    var content = this.template({sliderItem: this.model});
     this.$el.html(content);
     this.attachSubviews();
     return this;

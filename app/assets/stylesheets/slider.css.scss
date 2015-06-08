@@ -18,29 +18,6 @@
   height: auto;
 }
 
-button {
-  position: absolute;
-}
-
-.next {
-  right: 5px;
-}
-
-.prev {
-  left: 5px;
-}
-
-// #carousel{
-//   // padding:0px
-//   text-align:center
-// }
-//
-// .carousel-active{
-//     width:90%;
-//     height:90%;
-//
-// }
-
 #carousel{
   display: block;
   max-height: 160px;
@@ -48,11 +25,7 @@ button {
   -webkit-transition: all 500ms ease-in-out
 }
 
-.thumb{
-  // width: 24.8648648648649%;
-  // margin: 0px;
-  // max-width: 150px;
-  // max-height: 160px;
-  width: 150px;
-  height: 150px
+.carousel-inner div {
+  width: 386.25px;
+  height: 236.922px;
 }
