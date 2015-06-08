@@ -13,12 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require underscore
-//= require modernizr.custom.17475.js
-//= require jquerypp.custom.js
-//= require jquery.elastislide.js
 //= require bootstrap
 //= require backbone
-//= require slider.js
 //= require jquery.serializejson.min
 //= require parks_n_recs
 //= require_tree ../templates
