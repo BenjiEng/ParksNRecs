@@ -20,10 +20,10 @@ ParksNRecs.Views.EventMapShow = Backbone.View.extend({
       userLng = that.lng
     } else {
       alert("Geolocation service failed.")
-      userLat = 40.7833;
+      userLat = 37.7833;
       userLng = -122.4167;
     }
-    
+
     var mapOptions = {
       center: { lat: userLat, lng: userLng},
       zoom: 12

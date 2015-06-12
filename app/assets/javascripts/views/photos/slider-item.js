@@ -1,5 +1,7 @@
 ParksNRecs.Views.PhotoSliderItem = Backbone.View.extend({
   template: JST['photos/slider-item'],
+  tagName: 'div',
+  className: 'item',
 
   initialize: function() {
   },
