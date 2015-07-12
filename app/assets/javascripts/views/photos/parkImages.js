@@ -23,7 +23,7 @@ ParksNRecs.Views.ParkImages = Backbone.CompositeView.extend({
     var pic = this.collection.at(this.imgCount);
     // this.imageURL = pic.get("picture_url");
     var view = new ParksNRecs.Views.ImageIndexItem({model: pic});
-    ParksNRecs.photo = view
+    // ParksNRecs.photo = view
     this.$el.find(".img-box").html(view.render().el)
     // this.render()
   },
@@ -32,12 +32,18 @@ ParksNRecs.Views.ParkImages = Backbone.CompositeView.extend({
     if(this.imgCount != 0) {
       this.imgCount -= 1
       this.loadImage();
+    } else {
+      this.imgCount = this.collection.length - 1;
+      this.loadImage();
     }
   },
 
   moveRight: function () {
-    if(this.imgCount != this.collection.length) {
+    if(this.imgCount != this.collection.length - 1) {
       this.imgCount += 1
+      this.loadImage();
+    } else {
+      this.imgCount = 0;
       this.loadImage();
     }
   },
