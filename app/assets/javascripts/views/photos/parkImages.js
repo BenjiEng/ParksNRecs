@@ -23,23 +23,19 @@ ParksNRecs.Views.ParkImages = Backbone.CompositeView.extend({
     var pic = this.collection.at(this.imgCount);
     // this.imageURL = pic.get("picture_url");
     var view = new ParksNRecs.Views.ImageIndexItem({model: pic});
-    // debugger
     ParksNRecs.photo = view
     this.$el.find(".img-box").html(view.render().el)
-    // debugger
     // this.render()
   },
 
   moveLeft: function () {
     if(this.imgCount != 0) {
-      // debugger
       this.imgCount -= 1
       this.loadImage();
     }
   },
 
   moveRight: function () {
-    // debugger
     if(this.imgCount != this.collection.length) {
       this.imgCount += 1
       this.loadImage();

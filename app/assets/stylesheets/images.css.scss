@@ -1,0 +1,30 @@
+.park-img{
+  height: 400px;
+  width: 400px;
+  border: 1px solid gray;
+}
+
+#chevron-left {
+  transition: all 500ms;
+  position: absolute;
+  margin-top:190px;
+  z-index: 201;
+  color: #00CC66;
+  font-size: 55px;
+  width: 6%;
+  height: 50vh;
+  cursor: pointer;
+}
+
+#chevron-right {
+  transition: all 500ms;
+  position: absolute;
+  margin-top:190px;
+  margin-left:346px;
+  z-index: 201;
+  color: #00CC66;
+  font-size: 55px;
+  width: 6%;
+  height: 50vh;
+  cursor: pointer;
+}

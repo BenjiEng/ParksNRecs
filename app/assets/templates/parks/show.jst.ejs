@@ -20,29 +20,24 @@
     </div>
   </div>
 
-  <div class="row carousel">
+  <div class="row map-n-images">
     <div class="park-map col-md-5 col-md-offset-1"></div>
 
 
-    <div class="col-md-5 photos images"></div>
+    <div class="col-md-5 images"></div>
 </div>
 
 
-    <div class="row">
-
-      <div class="col-md-1">
+    <div class="row basic-info">
+      <div class="col-md-2 col-md-offset-1">
         <p class="category">Address: </p>
+        <span><%=park.escape('address')%></span>
+        <br>
+        <span><%=park.escape('city')%>, <%=park.escape('zip')%></span>
       </div>
 
-
-    <!-- <div class="col-md-5 park-info" > -->
-      <span><%=park.escape('address')%></span>
-      <br>
-      <span><%=park.escape('city')%>, <%=park.escape('zip')%></span>
-    <!-- </div> -->
-
     <%if(park.get('avg_scores') ) {%>
-      <div class="col-md-1">
+      <div class="avg-scores col-md-1">
         <p class="category">Safety: </p>
         <p class="category">Seating: </p>
         <p class="category">Running: </p>
@@ -68,8 +63,8 @@
 
   <div class="row">
     <div class="col-md-11 col-md-offset-1">
-      <h2>Reviews</h2>
-      <ul id='review-items'></ul>
+      <h3>Reviews</h2>
+      <p id='review-items'></p>
     </div>
   </div>
 

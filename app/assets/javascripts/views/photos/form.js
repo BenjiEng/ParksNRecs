@@ -21,7 +21,6 @@ ParksNRecs.Views.PhotoForm = Backbone.View.extend({
     data['photo']['park_id'] = this.model.id;
     var photo = new ParksNRecs.Models.Photo(data)
     photo.save({}, {success: function () {
-      debugger
       that.collection.add(photo, {merge: true});
       Backbone.history.navigate("/parks/" + that.model.id, {trigger: true});
     },
