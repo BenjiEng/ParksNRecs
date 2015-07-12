@@ -1,31 +1,5 @@
-.slide-container {
-  max-width: 400px;
-  background-color: black;
-  margin: 0 auto;
-  text-align: center;
-  position: relative;
-}
+.park-img{
+  height: 400px;
+  width: 400px
 
-.slide-container div {
-  background-color: white;
-  width: 100%;
-  display: inline-block;
-  display: none;
-}
-
-.slide-container img {
-  width: 100%;
-  height: auto;
-}
-
-#carousel{
-  display: block;
-  max-height: 160px;
-  transition: all 500ms ease-in-out;
-  -webkit-transition: all 500ms ease-in-out
-}
-
-.carousel-inner div {
-  width: 386.25px;
-  height: 236.922px;
 }
