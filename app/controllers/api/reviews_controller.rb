@@ -1,6 +1,11 @@
 class Api::ReviewsController < ApplicationController
   before_action :require_signed_in!
 
+  def index
+    @recent_reviews = Review.all.order('created_at DESC LIMIT 5')
+    render :index
+  end
+
   def create
     @review = Review.new(review_params)
     @review.user_id = current_user.id

@@ -4,22 +4,22 @@ ParksNRecs.Views.ParksIndex = Backbone.CompositeView.extend({
   initialize: function () {
     this.listenTo(this.collection, 'sync', this.render);
     this.listenTo(this.collection, 'add', this.addIndexItem);
-
+    
     var that = this;
     this.collection.each(function (park) {
       that.addIndexItem(park)
     })
-  };
+  },
 
   addIndexItem: function (park) {
     var view = new ParksNRecs.Views.ParkIndexItem({model: park});
     this.addSubview('#park-items', view)
-  };
+  },
 
-  addRecentReviews: function (review) {
-    var view = new ParksNRecs.Views.Recent
-    this.addSubview('#recent-reviews', view)
-  };
+  // addRecentReviews: function (review) {
+  //   var view = new ParksNRecs.Views.RecentReviews({model: })??is it a model?
+  //   this.addSubview('#recent-reviews', view)
+  // };
 
   render: function () {
     var content = this.template({});

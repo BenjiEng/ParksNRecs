@@ -5,6 +5,4 @@ json.array! @parks do |park|
 
 json.avg_score @avg_scores[park.id]
 
-json.recent_reviews @recent_reviews
-
 end

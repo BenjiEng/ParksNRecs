@@ -1,8 +1,7 @@
 ParksNRecs.Views.ParkReviewItem = Backbone.CompositeView.extend({
-  template: JST['parks/review-item'],
+  template: JST['reviews/review-item'],
   tagName: 'li',
   className: 'review-item',
-
 
   initialize: function () {
     this.addStars();
