@@ -15,14 +15,14 @@ ParksNRecs.Routers.Router = Backbone.Router.extend({
 
    root: function () {
     var view = new ParksNRecs.Views.Root({
-      collection: ParksNRecs.parks
+      collection: ParksNRecs.parks,
     });
     this._swapView(view);
   },
 
   parkForm: function() {
-    var park = new ParksNRecs.Models.Park();
-    var view = new ParksNRecs.Views.ParkForm({ model: park });
+    // var park = new ParksNRecs.Models.Park();
+    var view = new ParksNRecs.Views.ParkForm();
     this._swapView(view)
   },
 

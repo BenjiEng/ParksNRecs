@@ -8,28 +8,48 @@ ParksNRecs.Views.ParkForm = Backbone.View.extend({
   },
 
   submit: function(event) {
-    // event.preventDefault();
     // var data = {'park': {}};
-    // var that = this;
-    // var newPark = new ParksNRecs.Models.Park(data);
-    // newPark.save({}, {
-    //   success: function(){
-    //     that.collection.add(newPark, {merge: true});
-    //     Backbone.history.navigate("/#", {trigger: true});
+    var that = this;
+    event.preventDefault();
+    var data = this.$el.serializeJSON();
+    var newPark = new ParksNRecs.Models.Park(data);
+    newPark.save({}, {
+      success: function(){
+        that.collection.add(newPark, {merge: true});
+        Backbone.history.navigate("/#", {trigger: true});
+      },
+      error: function (model, response) {
+        that.$('.errors').html('')
+        if(response.responseJSON){
+          response.responseJSON.forEach(function (error) {
+            var content = that.errorTemplate({error: error})
+            that.$('.errors').prepend(content);
+            setTimeout( function () {
+              $(".alert").fadeOut();
+            }, 5000);
+          })
+        } }
+    });
+
+    // var attrs = this.$el.serializeJSON();
+    // this.model.set(attrs);
+    // debugger
+    // this.model.save({}, {
+    //   success: function() {
+    //     that.collection.add(that.model, {merge: true});
     //   },
-    //   error: function (model, response) {
+    //   error: function(model, response) {
     //     that.$('.errors').html('')
-    //     if(response.responseJSON){
+    //     if(response.responseJSON) {
     //       response.responseJSON.forEach(function (error) {
-    //         var content = that.errorTemplate({error: error})
-    //         that.$('.errors').prepend(content);
-    //         setTimeout( function () {
-    //           $(".alert").fadeOut();
+    //         that.$('errors').prepend(content);
+    //         setTimeout(function () {
+    //           $('.alert').fadeOut();
     //         }, 5000);
-    //       })
-    //     } }
+    //       });
+    //     }
+    //   }
     // });
-    //
   },
 
   render: function() {

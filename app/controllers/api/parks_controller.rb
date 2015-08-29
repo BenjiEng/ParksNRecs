@@ -36,6 +36,8 @@ class Api::ParksController < ApplicationController
     @parks.each do |park|
       @avg_scores[park.id] = average(:overall_score, park)
     end
+
+    @recent_reviews = Review.all.order('created_at DESC LIMIT 5')
     render :index
   end
 
