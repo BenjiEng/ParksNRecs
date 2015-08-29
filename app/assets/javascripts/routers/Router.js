@@ -6,7 +6,6 @@ ParksNRecs.Routers.Router = Backbone.Router.extend({
 
   routes: {
     '': 'root',
-    'parks/new': 'parkForm',
     'parks/:id': 'parkShow',
     'parks/:id/write-review': 'reviewForm',
     'parks/:id/add-photo': 'addPhoto',
@@ -18,12 +17,6 @@ ParksNRecs.Routers.Router = Backbone.Router.extend({
       collection: ParksNRecs.parks
     });
     this._swapView(view);
-  },
-
-  parkForm: function() {
-    var park = new ParksNRecs.Models.Park();
-    var view = new ParksNRecs.Views.ParkForm({ model: park });
-    this._swapView(view)
   },
 
   reviewForm: function(id) {
