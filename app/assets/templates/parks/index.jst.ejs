@@ -1,4 +1,7 @@
 <div class="container">
+  <% if (ParksNRecs.currentUserId) { %>
+    <a href="#/parks/new">Add new park</a>
+  <% } %>
   <h2 class='park-items-header'>Parks Near You</h2>
   <ul id='park-items'></ul>
 </div>
