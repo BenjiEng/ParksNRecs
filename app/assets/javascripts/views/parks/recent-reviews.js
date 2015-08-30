@@ -1,22 +1,28 @@
 ParksNRecs.Views.RecentReviews = Backbone.CompositeView.extend({
   template: JST['reviews/recent-review'],
-  tagName: 'li',
-  className: 'review-item',
+  // tagName: 'li',
+  // className: 'review-item',
 
   initialize: function () {
-    this.$el.attr('data-park-id', this.model.id)
-    this.addStars();
+    this.collection.fetch();
+    this.listenTo(this.collection, 'add', this.addRecentReview)
+    this.listenTo(this.collection, 'add', this.render);
   },
 
-  addStars: function () {
-    avgScores = this.model.get('avg_score');
-    var view = new ParksNRecs.Views.ScoreStars({score: avgScores})
-    this.addSubview('.ind-str', view);
+  check: function () {
+    debugger
+  },
+
+  addRecentReview: function (review) {
+    // debugger
+    var view = new ParksNRecs.Views.ParkReviewItem({model: review});
+    this.addSubview('#reviews', view);
   },
 
   render: function () {
-    var content = this.template({park: this.model});
+    var content = this.template();
     this.$el.html(content);
+    // this.attachSubviews();
     return this;
   }
 
