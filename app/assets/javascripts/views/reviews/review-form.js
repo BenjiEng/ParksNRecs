@@ -51,6 +51,8 @@ ParksNRecs.Views.ReviewForm = Backbone.View.extend({
         data['review'][category] = score
     })
     data['review']['park_id'] = this.model.id;
+    data['review']['comments'] = this.$el.find('.comment-field').val();
+
     var newReview = new ParksNRecs.Models.Review(data);
     newReview.save({}, {
       success: function(){

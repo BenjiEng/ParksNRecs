@@ -4,19 +4,29 @@ ParksNRecs.Views.RecentReviews = Backbone.CompositeView.extend({
   // className: 'review-item',
 
   initialize: function () {
-    this.collection.fetch();
-    this.listenTo(this.collection, 'add', this.addRecentReview)
+
+    this.addRecentReviews();
+    this.listenTo(this.collection, 'add', this.addRecentReview);
+    // this.listenTo(this.collection, 'sync', this.addRecentReview);
     this.listenTo(this.collection, 'add', this.render);
   },
 
-  check: function () {
-    debugger
+  addRecentReviews: function (review) {
+    // debugger
+    if(this.collection.length > 0) {
+      this.collection.each(function (review) {
+        this.addRecentReview(review);
+      }.bind(this));
+    }
+    else {
+      this.collection.fetch();
+    }
   },
 
   addRecentReview: function (review) {
     // debugger
-    var view = new ParksNRecs.Views.ParkReviewItem({model: review});
-    this.addSubview('#reviews', view);
+      var view = new ParksNRecs.Views.ParkReviewItem({model: review});
+      this.addSubview('#reviews', view);
   },
 
   render: function () {
