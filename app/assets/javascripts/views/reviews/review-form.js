@@ -42,7 +42,6 @@ ParksNRecs.Views.ReviewForm = Backbone.View.extend({
   submit: function(event) {
     event.preventDefault();
     var formElement = $(event.currentTarget).parent()
-    // Why is this not available in the each!?
     var data = {'review': {}};
     var that = this;
     this.$('tr').each(function (index, element) {
@@ -57,7 +56,7 @@ ParksNRecs.Views.ReviewForm = Backbone.View.extend({
     newReview.save({}, {
       success: function(){
         that.collection.add(newReview, {merge: true});
-        Backbone.history.navigate("/#/parks/" + that.model.id, {trigger: true});
+        Backbone.history.navigate("/#", {trigger: true});
       },
       error: function (model, response) {
         that.$('.errors').html('')

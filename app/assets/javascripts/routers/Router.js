@@ -28,8 +28,7 @@ ParksNRecs.Routers.Router = Backbone.Router.extend({
 
   reviewForm: function(id) {
     var park = ParksNRecs.parks.getOrFetch(id);
-    var view = new ParksNRecs.Views.ReviewForm({
-    model: park})
+    var view = new ParksNRecs.Views.ReviewForm({model: park})
     this._swapView(view)
   },
 

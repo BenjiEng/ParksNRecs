@@ -1,7 +1,8 @@
 ParksNRecs.Views.ParksIndex = Backbone.CompositeView.extend({
   template: JST["parks/index"],
 
-  initialize: function (options) {
+  initialize: function () {
+    ParksNRecs.reviews.fetch();
     this.recentReviews = ParksNRecs.reviews;
     this.listenTo(this.collection, 'sync', this.render);
     this.listenTo(this.collection, 'add', this.addIndexItem);

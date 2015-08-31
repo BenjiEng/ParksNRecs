@@ -8,8 +8,6 @@ ParksNRecs.Views.BasicMapShow = Backbone.View.extend({
     this._markers = {};
     this.lat = options.lat;
     this.lng = options.lng;
-    // this.listenTo(this.model, 'sync', this.render)
-
   },
 
   addMarker: function (park) {
