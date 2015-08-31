@@ -11,6 +11,7 @@ ul {
 
 .index-header {
   color: #0C6637;
+  display: inline-block;
 }
 
 .park-items-header{
@@ -41,4 +42,23 @@ ul {
 
 .ind-str {
   display: inline-block;
+}
+
+.create-park-button {
+  display: inline-block;
+  position: relative;
+  bottom: 5px;
+  left: 180px;
+  padding: 7px 16px 7px 12px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+  border-color: #a50508;
+  background: #ea050b;
+  background-image: -webkit-linear-gradient(#ff2000 2%, #ea050b 10%, #d40d04 100%);
+  background-image: linear-gradient(#ff2000 2%, #ea050b 10%, #d40d04 100%);
+  -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+  text-shadow: 0 -1px 0 #760400;
 }

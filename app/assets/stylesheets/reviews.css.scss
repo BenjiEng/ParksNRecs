@@ -35,3 +35,11 @@
 .user_name {
   font-weight: bold;
 }
+
+#recent-reviews {
+  padding: 1px;
+  height: 440px;
+  width: 250px;
+  overflow: hidden;
+  overflow-y: scroll;
+}

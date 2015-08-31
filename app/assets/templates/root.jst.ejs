@@ -1,5 +1,10 @@
 <div class='containment'>
-  <h1 class='index-header'>ParksNRecs</h1>
+  <div class='row'>
+    <h1 class='index-header'>ParksNRecs</h1>
+    <% if (ParksNRecs.currentUserId) { %>
+      <a class="create-park-button" href="#/parks/new">Add new park</a>
+    <% } %>
+  </div>
 
   <div id=map class="map col-md-4"></div>
   <div id=parks-index class="sidebar col-md-8"></div>

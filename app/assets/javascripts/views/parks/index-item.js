@@ -1,6 +1,5 @@
 ParksNRecs.Views.ParkIndexItem = Backbone.CompositeView.extend({
   template: JST['parks/index-item'],
-  tagName: 'li',
   className: 'park-item',
 
   initialize: function () {
