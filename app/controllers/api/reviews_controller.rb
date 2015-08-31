@@ -1,5 +1,5 @@
 class Api::ReviewsController < ApplicationController
-  before_action :require_signed_in!
+  skip_before_action :require_signed_in!, only: [:index, :show]
 
   def index
     @recent_reviews = Review.all.order('created_at DESC LIMIT 5')
