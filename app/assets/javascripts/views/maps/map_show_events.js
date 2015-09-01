@@ -15,14 +15,16 @@ ParksNRecs.Views.EventMapShow = Backbone.View.extend({
 
   render: function () {
     var that = this;
-    if (this.lng && this.lat) {
-      userLat = that.lat;
-      userLng = that.lng
-    } else {
-      alert("Geolocation service failed.")
-      userLat = 37.7833;
-      userLng = -122.4167;
-    }
+    var userLat = 37.7833;
+    var userLng = -122.4167;
+    // if (this.lng && this.lat) {
+    //   userLat = that.lat;
+    //   userLng = that.lng
+    // } else {
+    //   alert("Geolocation service failed.")
+    //   userLat = 37.7833;
+    //   userLng = -122.4167;
+    // }
 
     var mapOptions = {
       center: { lat: userLat, lng: userLng},

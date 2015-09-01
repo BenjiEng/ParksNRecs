@@ -36,8 +36,8 @@ ParksNRecs.Views.Root = Backbone.CompositeView.extend({
   events: {
     'click a.remove-park': 'destroyPark',
     'click a.park-name': 'panToPark',
-    'mouseenter li.park-item': 'startBounce',
-    'mouseleave li.park-item': 'stopBounce'
+    'mouseenter .park-item': 'startBounce',
+    'mouseleave .park-item': 'stopBounce'
   },
 
   // Event handlers
