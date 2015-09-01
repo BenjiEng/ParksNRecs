@@ -55,8 +55,9 @@ ParksNRecs.Views.ReviewForm = Backbone.View.extend({
     var newReview = new ParksNRecs.Models.Review(data);
     newReview.save({}, {
       success: function(){
-        that.collection.add(newReview, {merge: true});
+        that.collection.push(newReview, {merge: true});
         Backbone.history.navigate("/#", {trigger: true});
+        window.location.reload();
       },
       error: function (model, response) {
         that.$('.errors').html('')

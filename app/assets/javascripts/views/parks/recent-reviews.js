@@ -2,6 +2,7 @@ ParksNRecs.Views.RecentReviews = Backbone.CompositeView.extend({
   template: JST['reviews/recent-review'],
 
   initialize: function () {
+    ParksNRecs.reviews.fetch();
     this.addRecentReviews();
     this.listenTo(this.collection, 'add', this.addRecentReview);
     this.listenTo(this.collection, 'add', this.render);
