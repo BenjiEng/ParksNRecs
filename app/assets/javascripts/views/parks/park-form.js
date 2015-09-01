@@ -18,6 +18,7 @@ ParksNRecs.Views.ParkForm = Backbone.View.extend({
       success: function(){
         ParksNRecs.parks.add(newPark, {merge: true});
         Backbone.history.navigate("/#", {trigger: true});
+        window.location.reload();
       },
       error: function (model, response) {
         that.$('.errors').html('')
